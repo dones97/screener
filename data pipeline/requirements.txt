@@ -1,0 +1,9 @@
+streamlit
+pandas
+yfinance
+requests_cache
+numpy
+# Optional: for SQLite-based features
+sqlalchemy
+# Optional: for better date handling if needed
+python-dateutil
