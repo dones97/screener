@@ -5,6 +5,9 @@ on:
     - cron: '0 3 1 * *' # Runs at 03:00 UTC on the 1st of every month
   workflow_dispatch:    # Allows manual trigger from GitHub UI
 
+permissions:
+  contents: write  # Grant write access to repository contents
+
 jobs:
   metrics-ingestion:
     runs-on: ubuntu-latest
