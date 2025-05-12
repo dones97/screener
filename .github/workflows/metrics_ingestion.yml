@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run metrics ingestion batch script
-        run: python data pipeline/metrics_ingestion_batch.py
+        run: python data_pipeline/metrics_ingestion_batch.py
 
       - name: Commit and push updated metrics
         run: |
