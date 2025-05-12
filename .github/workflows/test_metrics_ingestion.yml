@@ -10,6 +10,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Ensure required data directory and file exist
+        run: |
+          mkdir -p data
+          echo "YF_Ticker" > data/qualified_tickers.csv
+          echo "AAPL" >> data/qualified_tickers.csv
+          echo "GOOGL" >> data/qualified_tickers.csv
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
