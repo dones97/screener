@@ -51,7 +51,8 @@ def calculate_cagr(series: pd.Series) -> Optional[float]:
 # Helper: average NPM
 def calculate_avg_margin(net_income: pd.Series, revenue: pd.Series) -> Optional[float]:
     try:
-        npm = (net_income / revenue).replace([np.inf, -np.inf], np.nan).dropna()
+        npm = (net_income / revenue).replace([np.inf, -np.inf], np.nan)
+        npm = npm.infer_objects(copy=False).dropna()
         if len(npm) == 0:
             return None
         return npm.mean()
