@@ -4,6 +4,8 @@ import numpy as np
 import sqlite3
 import os
 import logging
+import time
+import random
 from datetime import datetime
 from typing import Optional
 
@@ -38,6 +40,10 @@ DISPLAY_METRICS_MAP = {
     "interest_coverage": "interestCoverage"  # Not always available
 }
 
+MAX_RETRIES = 4
+RETRY_WAIT = 60  # seconds
+PER_TICKER_SLEEP = 1.0  # seconds
+
 # Helper: calculate CAGR
 def calculate_cagr(series: pd.Series) -> Optional[float]:
     if len(series) < 2 or series.iloc[0] == 0 or any(series <= 0):
@@ -52,7 +58,7 @@ def calculate_cagr(series: pd.Series) -> Optional[float]:
 def calculate_avg_margin(net_income: pd.Series, revenue: pd.Series) -> Optional[float]:
     try:
         npm = (net_income / revenue).replace([np.inf, -np.inf], np.nan)
-        npm = npm.infer_objects(copy=False).dropna()
+        npm = npm.infer_objects(copy=False).dropna()  # Fix FutureWarning
         if len(npm) == 0:
             return None
         return npm.mean()
@@ -127,6 +133,23 @@ def extract_financials(ticker: str, min_years: int = 4):
 
     return out
 
+def process_ticker_with_retries(ticker, min_years=4):
+    for attempt in range(MAX_RETRIES):
+        try:
+            metrics = extract_financials(ticker, min_years=min_years)
+            return metrics
+        except Exception as e:
+            err = str(e).lower()
+            if "too many requests" in err or "rate limit" in err or "timed out" in err:
+                wait_time = RETRY_WAIT * (attempt + 1) + random.uniform(0, 10)
+                logging.warning(f"[{ticker}] Rate limited or network error (attempt {attempt+1}/{MAX_RETRIES}). Retrying in {wait_time:.1f}s...")
+                time.sleep(wait_time)
+            else:
+                logging.warning(f"[{ticker}] Error: {e}")
+                return None
+    logging.error(f"[{ticker}] Failed after {MAX_RETRIES} attempts due to rate limiting.")
+    return None
+
 def main():
     # Load qualified tickers
     if not os.path.exists(QUALIFIED_PATH):
@@ -139,13 +162,12 @@ def main():
 
     records = []
     for idx, ticker in enumerate(tickers):
-        try:
-            metrics = extract_financials(ticker, min_years=4)
-            if metrics:
-                records.append(metrics)
-        except Exception as e:
-            logging.warning(f"[{ticker}] Error: {e}")
-        if idx % 50 == 0 or idx == len(tickers) - 1:
+        metrics = process_ticker_with_retries(ticker, min_years=4)
+        if metrics:
+            records.append(metrics)
+        time.sleep(PER_TICKER_SLEEP + random.uniform(0, 0.5))  # Add jitter to avoid pattern
+
+        if (idx + 1) % 50 == 0 or idx == len(tickers) - 1:
             logging.info(f"Processed {idx+1}/{len(tickers)} tickers")
 
     metrics_df = pd.DataFrame(records)
