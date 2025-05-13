@@ -141,7 +141,7 @@ st.write(
 )
 
 st.write(f"**{len(filtered)} stocks found**")
-show_cols = ["ticker", "industry", "industry_count", "revenue_cagr", "net_profit_margin_avg", "market_cap"]
+show_cols = ["Ticker", "Industry", "Ind Count", "Rev CAGR", "NPM Avg", "MCap"]
 st.dataframe(
     filtered[show_cols]
     .sort_values(by=["revenue_cagr", "net_profit_margin_avg", "market_cap"], ascending=False)
