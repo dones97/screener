@@ -1,775 +1,376 @@
-industry,percentile,revenue_cagr,net_income_cagr,eps_cagr,net_profit_margin_avg,operating_cashflow_cagr
-,1,,,,-0.007243632566007531,
-,5,,,,-0.0044651143873616385,
-,10,,,,-0.0009919666640542746,
-,20,,,,0.005954328782560454,
-,25,,,,0.009427476505867817,
-,50,,,,0.026793215122404637,
-Advertising Agencies,1,,,,0.08163246265692173,
-Advertising Agencies,5,,,,0.08163246265692173,
-Advertising Agencies,10,,,,0.08163246265692173,
-Advertising Agencies,20,,,,0.08165909804430356,
-Advertising Agencies,25,,,,0.08168240400826267,
-Advertising Agencies,50,,,,0.08429082055806648,
-Aerospace & Defense,1,,,,0.03440524560690344,
-Aerospace & Defense,5,,,,0.05409828785701152,
-Aerospace & Defense,10,,,,0.06024573831522371,
-Aerospace & Defense,20,,,,0.10829353882524895,
-Aerospace & Defense,25,,,,0.12557606402006732,
-Aerospace & Defense,50,,,,0.15794331321799954,
-Agricultural Inputs,1,,,,-0.26893144026816906,
-Agricultural Inputs,5,,,,-0.15733671826399773,
-Agricultural Inputs,10,,,,-0.04564979707013835,
-Agricultural Inputs,20,,,,0.02115037812569099,
-Agricultural Inputs,25,,,,0.026706337934411933,
-Agricultural Inputs,50,,,,0.05846594757542399,
-Airlines,1,,,,-0.13266780085658006,
-Airlines,5,,,,-0.13266780085658006,
-Airlines,10,,,,-0.13266780085658006,
-Airlines,20,,,,-0.13266780085658006,
-Airlines,25,,,,-0.13266780085658006,
-Airlines,50,,,,-0.13266780085658006,
-Airports & Air Services,1,,,,-0.3567154001659119,
-Airports & Air Services,5,,,,-0.3567154001659119,
-Airports & Air Services,10,,,,-0.3567154001659119,
-Airports & Air Services,20,,,,-0.2929762172864874,
-Airports & Air Services,25,,,,-0.1973674429673508,
-Airports & Air Services,50,,,,-0.03801948576878967,
-Aluminum,1,,,,0.008982550299801925,
-Aluminum,5,,,,0.008982550299801925,
-Aluminum,10,,,,0.013295048226601176,
-Aluminum,20,,,,0.016670174979966448,
-Aluminum,25,,,,0.016982098178212668,
-Aluminum,50,,,,0.04299774106203141,
-Apparel Manufacturing,1,,,,-0.29652162410226063,
-Apparel Manufacturing,5,,,,-0.14613870443994909,
-Apparel Manufacturing,10,,,,-0.06919187399160542,
-Apparel Manufacturing,20,,,,-0.0139634838800688,
-Apparel Manufacturing,25,,,,0.0028538308885818755,
-Apparel Manufacturing,50,,,,0.03548504871090899,
-Apparel Retail,1,,,,-6.757197786456845,
-Apparel Retail,5,,,,-1.8948641701863855,
-Apparel Retail,10,,,,-0.18802934789054926,
-Apparel Retail,20,,,,-0.008470335669013151,
-Apparel Retail,25,,,,-0.008470335669013151,
-Apparel Retail,50,,,,0.05057118911027185,
-Asset Management,1,,,,-13.288725434323421,
-Asset Management,5,,,,-0.3359547320051806,
-Asset Management,10,,,,0.013969511028656477,
-Asset Management,20,,,,0.19474636892452266,
-Asset Management,25,,,,0.3259346770819931,
-Asset Management,50,,,,0.7046625594932493,
-Auto & Truck Dealerships,1,,,,-0.0021558508761746645,
-Auto & Truck Dealerships,5,,,,0.0018130799306236003,
-Auto & Truck Dealerships,10,,,,0.006774243439121431,
-Auto & Truck Dealerships,20,,,,0.011189272941495894,
-Auto & Truck Dealerships,25,,,,0.012478904773579592,
-Auto & Truck Dealerships,50,,,,0.014338014567953304,
-Auto Manufacturers,1,,,,-59.01176731866312,
-Auto Manufacturers,5,,,,-44.27617512539442,
-Auto Manufacturers,10,,,,-0.06939854558832857,
-Auto Manufacturers,20,,,,-0.020538332434656817,
-Auto Manufacturers,25,,,,-0.00496171853209346,
-Auto Manufacturers,50,,,,0.05690115241076789,
-Auto Parts,1,,,,-0.3201945554177417,
-Auto Parts,5,,,,-0.025046555880275535,
-Auto Parts,10,,,,-0.000929848332209578,
-Auto Parts,20,,,,0.012175701772254447,
-Auto Parts,25,,,,0.016793256007334306,
-Auto Parts,50,,,,0.041023034241243254,
-Banks - Regional,1,,,,0.040485340074136233,
-Banks - Regional,5,,,,0.08291192842218956,
-Banks - Regional,10,,,,0.09329645877485793,
-Banks - Regional,20,,,,0.13088216528154087,
-Banks - Regional,25,,,,0.13529992976784744,
-Banks - Regional,50,,,,0.202629352345568,
-Beverages - Brewers,1,,,,-0.5867943579214419,
-Beverages - Brewers,5,,,,-0.48961772097845435,
-Beverages - Brewers,10,,,,-0.36814692479972,
-Beverages - Brewers,20,,,,-0.12520533244225135,
-Beverages - Brewers,25,,,,-0.003734536263517052,
-Beverages - Brewers,50,,,,-0.003734536263517052,
-Beverages - Non-Alcoholic,1,,,,-1.5382873920153017,
-Beverages - Non-Alcoholic,5,,,,-1.5382873920153017,
-Beverages - Non-Alcoholic,10,,,,-1.5382873920153017,
-Beverages - Non-Alcoholic,20,,,,-0.9371848982132591,
-Beverages - Non-Alcoholic,25,,,,-0.4112202161364722,
-Beverages - Non-Alcoholic,50,,,,0.06820179043269181,
-Beverages - Wineries & Distilleries,1,,,,-8.901525642351137,
-Beverages - Wineries & Distilleries,5,,,,-7.566988678791405,
-Beverages - Wineries & Distilleries,10,,,,0.001836544590990058,
-Beverages - Wineries & Distilleries,20,,,,0.03820641506662853,
-Beverages - Wineries & Distilleries,25,,,,0.03895162319324825,
-Beverages - Wineries & Distilleries,50,,,,0.07441521826222522,
-Biotechnology,1,,,,-55.5540758445618,
-Biotechnology,5,,,,-1.901782040533089,
-Biotechnology,10,,,,-1.0340363746314845,
-Biotechnology,20,,,,-0.03778754819017338,
-Biotechnology,25,,,,-0.03665219519849432,
-Biotechnology,50,,,,0.06516951453666651,
-Broadcasting,1,,,,-0.6851508201902641,
-Broadcasting,5,,,,-0.6410586136936539,
-Broadcasting,10,,,,-0.4646897877072135,
-Broadcasting,20,,,,-0.19750507855237903,
-Broadcasting,25,,,,-0.06719481569009698,
-Broadcasting,50,,,,-0.019615749969314415,
-Building Materials,1,,,,-3.2659851823035444,
-Building Materials,5,,,,-0.3431518736969655,
-Building Materials,10,,,,-0.0012845081477654736,
-Building Materials,20,,,,0.014077314340848406,
-Building Materials,25,,,,0.02486208600530552,
-Building Materials,50,,,,0.05884811462800184,
-Building Products & Equipment,1,,,,-6.073095668796505,
-Building Products & Equipment,5,,,,-0.7025297002517089,
-Building Products & Equipment,10,,,,-0.3413641313166973,
-Building Products & Equipment,20,,,,-0.01311550914422984,
-Building Products & Equipment,25,,,,0.011751818394827198,
-Building Products & Equipment,50,,,,0.045817330539438,
-Business Equipment & Supplies,1,,,,-0.017819048836488674,
-Business Equipment & Supplies,5,,,,-0.004083856285524778,
-Business Equipment & Supplies,10,,,,0.009963499732506481,
-Business Equipment & Supplies,20,,,,0.010403257816639548,
-Business Equipment & Supplies,25,,,,0.011612592548005484,
-Business Equipment & Supplies,50,,,,0.04330954641680607,
-Capital Markets,1,,,,-65.49844628484541,
-Capital Markets,5,,,,-2.8904328871938425,
-Capital Markets,10,,,,-0.2543467718037958,
-Capital Markets,20,,,,0.004757586642414206,
-Capital Markets,25,,,,0.01617352553776247,
-Capital Markets,50,,,,0.17936189331443125,
-Chemicals,1,,,,-0.35357472149746594,
-Chemicals,5,,,,-0.00867244705129336,
-Chemicals,10,,,,0.010268086107916649,
-Chemicals,20,,,,0.03200095442052849,
-Chemicals,25,,,,0.04530851107547369,
-Chemicals,50,,,,0.0743066151553004,
-Coking Coal,1,,,,0.00890179865130146,
-Coking Coal,5,,,,0.009135387264749965,
-Coking Coal,10,,,,0.009427373031560597,
-Coking Coal,20,,,,0.01001134456518186,
-Coking Coal,25,,,,0.010303330331992492,
-Coking Coal,50,,,,0.011763259166045651,
-Communication Equipment,1,,,,-0.9131307080918267,
-Communication Equipment,5,,,,-0.7604123136646145,
-Communication Equipment,10,,,,-0.16007412823421155,
-Communication Equipment,20,,,,-0.09798654971436037,
-Communication Equipment,25,,,,-0.019490176176759876,
-Communication Equipment,50,,,,0.03801288850401137,
-Computer Hardware,1,,,,-3.2293232401618313,
-Computer Hardware,5,,,,-1.7272631785286792,
-Computer Hardware,10,,,,-0.1910653882220468,
-Computer Hardware,20,,,,-0.15209801953459393,
-Computer Hardware,25,,,,-0.044937755644098645,
-Computer Hardware,50,,,,0.025766773762673195,
-Confectioners,1,,,,-0.03314032491323774,
-Confectioners,5,,,,-0.030369290584074667,
-Confectioners,10,,,,-0.022066774821375243,
-Confectioners,20,,,,-0.005286185084509696,
-Confectioners,25,,,,0.003364627488170167,
-Confectioners,50,,,,0.04378993051224782,
-Conglomerates,1,,,,-0.7530264461740761,
-Conglomerates,5,,,,-0.019297057813106668,
-Conglomerates,10,,,,0.0005992483699708492,
-Conglomerates,20,,,,0.015051179052954833,
-Conglomerates,25,,,,0.028277719884690283,
-Conglomerates,50,,,,0.0627783958520159,
-Consulting Services,1,,,,-18.30710612491314,
-Consulting Services,5,,,,-10.539888853003923,
-Consulting Services,10,,,,-2.42468488818993,
-Consulting Services,20,,,,-0.7198515558791436,
-Consulting Services,25,,,,-0.27517082596877174,
-Consulting Services,50,,,,-0.02263725776016276,
-Consumer Electronics,1,,,,-0.005430657546881591,
-Consumer Electronics,5,,,,-0.005430657546881591,
-Consumer Electronics,10,,,,-0.005430657546881591,
-Consumer Electronics,20,,,,0.0047552608148159125,
-Consumer Electronics,25,,,,0.013667939381301224,
-Consumer Electronics,50,,,,0.021118682049596,
-Copper,1,,,,-290.8042019366809,
-Copper,5,,,,-161.56055857904897,
-Copper,10,,,,-0.006004382009066626,
-Copper,20,,,,0.005470224516394699,
-Copper,25,,,,0.00818893165388379,
-Copper,50,,,,0.012237531851898187,
-Credit Services,1,,,,-14.540934858951356,
-Credit Services,5,,,,-2.7834507277882863,
-Credit Services,10,,,,-0.4929925692552894,
-Credit Services,20,,,,-0.0034312142214871677,
-Credit Services,25,,,,0.04334226855304424,
-Credit Services,50,,,,0.22022408842671587,
-Department Stores,1,,,,-0.08259344560001924,
-Department Stores,5,,,,-0.08259344560001924,
-Department Stores,10,,,,-0.08259344560001924,
-Department Stores,20,,,,-0.06691713128279841,
-Department Stores,25,,,,-0.04340265980696721,
-Department Stores,50,,,,-0.004211874013915177,
-Diagnostics & Research,1,,,,-0.24506013870647786,
-Diagnostics & Research,5,,,,-0.008365972938130763,
-Diagnostics & Research,10,,,,0.02558762219975695,
-Diagnostics & Research,20,,,,0.1357268507633795,
-Diagnostics & Research,25,,,,0.14703588280007854,
-Diagnostics & Research,50,,,,0.16033867651206438,
-Discount Stores,1,,,,0.04988494558931045,
-Discount Stores,5,,,,0.04988494558931045,
-Discount Stores,10,,,,0.04988494558931045,
-Discount Stores,20,,,,0.04988494558931045,
-Discount Stores,25,,,,0.04988494558931045,
-Discount Stores,50,,,,0.04988494558931045,
-Drug Manufacturers - General,1,,,,0.07231284217108214,
-Drug Manufacturers - General,5,,,,0.07231284217108214,
-Drug Manufacturers - General,10,,,,0.08488567635307434,
-Drug Manufacturers - General,20,,,,0.09745851053506654,
-Drug Manufacturers - General,25,,,,0.13323853635597932,
-Drug Manufacturers - General,50,,,,0.19415132809154045,
-Drug Manufacturers - Specialty & Generic,1,,,,-7.405372967753139,
-Drug Manufacturers - Specialty & Generic,5,,,,-0.15101502877593173,
-Drug Manufacturers - Specialty & Generic,10,,,,-0.03577107760637667,
-Drug Manufacturers - Specialty & Generic,20,,,,0.013261826704794047,
-Drug Manufacturers - Specialty & Generic,25,,,,0.021869787290916487,
-Drug Manufacturers - Specialty & Generic,50,,,,0.08130877407287382,
-Education & Training Services,1,,,,-28.598284229475354,
-Education & Training Services,5,,,,-19.199112119868673,
-Education & Training Services,10,,,,-5.100353955458663,
-Education & Training Services,20,,,,-1.0204942893029938,
-Education & Training Services,25,,,,-0.6276587438806481,
-Education & Training Services,50,,,,0.09855149891173515,
-Electrical Equipment & Parts,1,,,,-1.6625857379276978,
-Electrical Equipment & Parts,5,,,,-0.03602447015121452,
-Electrical Equipment & Parts,10,,,,-0.018891764125176014,
-Electrical Equipment & Parts,20,,,,0.015162994808064644,
-Electrical Equipment & Parts,25,,,,0.01861220028023565,
-Electrical Equipment & Parts,50,,,,0.04480019137144618,
-Electronic Components,1,,,,-0.957243570657768,
-Electronic Components,5,,,,-0.784201863099837,
-Electronic Components,10,,,,-0.05586892536537571,
-Electronic Components,20,,,,0.027043522603318368,
-Electronic Components,25,,,,0.03420934428196509,
-Electronic Components,50,,,,0.05068222308945819,
-Electronic Gaming & Multimedia,1,,,,0.03793455247743378,
-Electronic Gaming & Multimedia,5,,,,0.03793455247743378,
-Electronic Gaming & Multimedia,10,,,,0.03793455247743378,
-Electronic Gaming & Multimedia,20,,,,0.03793455247743378,
-Electronic Gaming & Multimedia,25,,,,0.03793455247743378,
-Electronic Gaming & Multimedia,50,,,,0.03793455247743378,
-Electronics & Computer Distribution,1,,,,-3.7685211515491055,
-Electronics & Computer Distribution,5,,,,-3.7685211515491055,
-Electronics & Computer Distribution,10,,,,-2.12589332340574,
-Electronics & Computer Distribution,20,,,,-0.4832654952623749,
-Electronics & Computer Distribution,25,,,,-0.19477824945933053,
-Electronics & Computer Distribution,50,,,,0.016829609109351502,
-Engineering & Construction,1,,,,-3.221075384038498,
-Engineering & Construction,5,,,,-0.349807121614639,
-Engineering & Construction,10,,,,-0.18261649458198714,
-Engineering & Construction,20,,,,-0.04526399918816553,
-Engineering & Construction,25,,,,0.0020521067257433,
-Engineering & Construction,50,,,,0.0419957800319501,
-Entertainment,1,,,,-387.26378777337146,
-Entertainment,5,,,,-19.88970579148572,
-Entertainment,10,,,,-3.2101199770031403,
-Entertainment,20,,,,-0.7639523980644104,
-Entertainment,25,,,,-0.6508184048330518,
-Entertainment,50,,,,-0.10551102375357256,
-Farm & Heavy Construction Machinery,1,,,,-1.2769247405750606,
-Farm & Heavy Construction Machinery,5,,,,-0.5924689107968346,
-Farm & Heavy Construction Machinery,10,,,,-0.030791989158485307,
-Farm & Heavy Construction Machinery,20,,,,0.0036161183480214703,
-Farm & Heavy Construction Machinery,25,,,,0.015513332575488452,
-Farm & Heavy Construction Machinery,50,,,,0.06541164870242475,
-Farm Products,1,,,,-4.556618767666548,
-Farm Products,5,,,,-0.08508416559900812,
-Farm Products,10,,,,-0.033633076361590096,
-Farm Products,20,,,,0.0016260525479014625,
-Farm Products,25,,,,0.0054534141973757175,
-Farm Products,50,,,,0.02229219877338642,
-Financial Conglomerates,1,,,,-0.13423688163678607,
-Financial Conglomerates,5,,,,-0.13423688163678607,
-Financial Conglomerates,10,,,,-0.05299127614875845,
-Financial Conglomerates,20,,,,0.06342145439913259,
-Financial Conglomerates,25,,,,0.06342145439913259,
-Financial Conglomerates,50,,,,0.08985578122363949,
-Financial Data & Stock Exchanges,1,,,,0.20647208952898988,
-Financial Data & Stock Exchanges,5,,,,0.20647208952898988,
-Financial Data & Stock Exchanges,10,,,,0.20647208952898988,
-Financial Data & Stock Exchanges,20,,,,0.2747288563463102,
-Financial Data & Stock Exchanges,25,,,,0.32023336755785714,
-Financial Data & Stock Exchanges,50,,,,0.3204114187400443,
-Food Distribution,1,,,,-0.4797972263418649,
-Food Distribution,5,,,,-0.16416687975870334,
-Food Distribution,10,,,,-0.055644394566823935,
-Food Distribution,20,,,,0.015081501431009794,
-Food Distribution,25,,,,0.02678948762790552,
-Food Distribution,50,,,,0.030226652374632304,
-Footwear & Accessories,1,,,,-0.17639647666178535,
-Footwear & Accessories,5,,,,-0.009133083775448638,
-Footwear & Accessories,10,,,,-0.0020997679284541207,
-Footwear & Accessories,20,,,,0.003117894113626388,
-Footwear & Accessories,25,,,,0.010569977358739359,
-Footwear & Accessories,50,,,,0.03382823463471675,
-"Furnishings, Fixtures & Appliances",1,,,,-0.051765904368104895,
-"Furnishings, Fixtures & Appliances",5,,,,-0.0361056459376845,
-"Furnishings, Fixtures & Appliances",10,,,,-0.016307264408343604,
-"Furnishings, Fixtures & Appliances",20,,,,0.017474366663740297,
-"Furnishings, Fixtures & Appliances",25,,,,0.024291114814894987,
-"Furnishings, Fixtures & Appliances",50,,,,0.04318549645738723,
-Gold,1,,,,,
-Gold,5,,,,,
-Gold,10,,,,,
-Gold,20,,,,,
-Gold,25,,,,,
-Gold,50,,,,,
-Grocery Stores,1,,,,0.03849586655320171,
-Grocery Stores,5,,,,0.03849586655320171,
-Grocery Stores,10,,,,0.03849586655320171,
-Grocery Stores,20,,,,0.03849586655320171,
-Grocery Stores,25,,,,0.03849586655320171,
-Grocery Stores,50,,,,0.03849586655320171,
-Health Information Services,1,,,,0.07752311238139473,
-Health Information Services,5,,,,0.08114629973792918,
-Health Information Services,10,,,,0.08567528393359725,
-Health Information Services,20,,,,0.09473325232493339,
-Health Information Services,25,,,,0.09926223652060145,
-Health Information Services,50,,,,0.12190715749894179,
-Healthcare Plans,1,,,,0.12415230961687054,
-Healthcare Plans,5,,,,0.12415230961687054,
-Healthcare Plans,10,,,,0.12415230961687054,
-Healthcare Plans,20,,,,0.12415230961687054,
-Healthcare Plans,25,,,,0.12415230961687054,
-Healthcare Plans,50,,,,0.12415230961687054,
-Home Improvement Retail,1,,,,0.01339402214383096,
-Home Improvement Retail,5,,,,0.01339402214383096,
-Home Improvement Retail,10,,,,0.01339402214383096,
-Home Improvement Retail,20,,,,0.01339402214383096,
-Home Improvement Retail,25,,,,0.01339402214383096,
-Home Improvement Retail,50,,,,0.01339402214383096,
-Household & Personal Products,1,,,,-0.729243827156062,
-Household & Personal Products,5,,,,-0.41642965172554114,
-Household & Personal Products,10,,,,-0.20074237602768316,
-Household & Personal Products,20,,,,-0.05700395181204618,
-Household & Personal Products,25,,,,0.00037914043094436703,
-Household & Personal Products,50,,,,0.09674509443232338,
-Industrial Distribution,1,,,,0.007352388152524067,
-Industrial Distribution,5,,,,0.008274933947254502,
-Industrial Distribution,10,,,,0.009428116190667548,
-Industrial Distribution,20,,,,0.01241949339164066,
-Industrial Distribution,25,,,,0.014600194706274236,
-Industrial Distribution,50,,,,0.02248980756236258,
-Information Technology Services,1,,,,-2.7768899859820104,
-Information Technology Services,5,,,,-0.2250639112165492,
-Information Technology Services,10,,,,-0.010414885438272039,
-Information Technology Services,20,,,,0.021930695270379223,
-Information Technology Services,25,,,,0.035872051311742925,
-Information Technology Services,50,,,,0.09745357431355985,
-Infrastructure Operations,1,,,,-81.529496265428,
-Infrastructure Operations,5,,,,-81.529496265428,
-Infrastructure Operations,10,,,,-49.78193241873136,
-Infrastructure Operations,20,,,,-2.1605866486864294,
-Infrastructure Operations,25,,,,-1.4829721962012057,
-Infrastructure Operations,50,,,,0.07054163406659691,
-Insurance - Diversified,1,,,,0.013188046249478799,
-Insurance - Diversified,5,,,,0.013188046249478799,
-Insurance - Diversified,10,,,,0.013188046249478799,
-Insurance - Diversified,20,,,,0.013188046249478799,
-Insurance - Diversified,25,,,,0.01632604900874476,
-Insurance - Diversified,50,,,,0.02574005728654265,
-Insurance - Life,1,,,,-0.2212896028440482,
-Insurance - Life,5,,,,-0.2212896028440482,
-Insurance - Life,10,,,,-0.19813222601534292,
-Insurance - Life,20,,,,0.010284165443004346,
-Insurance - Life,25,,,,0.010284165443004346,
-Insurance - Life,50,,,,0.01607003492441004,
-Insurance - Property & Casualty,1,,,,-0.0007135369922009298,
-Insurance - Property & Casualty,5,,,,-0.0007135369922009298,
-Insurance - Property & Casualty,10,,,,-0.0007135369922009298,
-Insurance - Property & Casualty,20,,,,-0.0007135369922009298,
-Insurance - Property & Casualty,25,,,,-0.0007135369922009298,
-Insurance - Property & Casualty,50,,,,-0.0007135369922009298,
-Insurance - Reinsurance,1,,,,0.4932228966405508,
-Insurance - Reinsurance,5,,,,0.4932228966405508,
-Insurance - Reinsurance,10,,,,0.4932228966405508,
-Insurance - Reinsurance,20,,,,0.4932228966405508,
-Insurance - Reinsurance,25,,,,0.4932228966405508,
-Insurance - Reinsurance,50,,,,0.4932228966405508,
-Insurance Brokers,1,,,,-0.23124700702629677,
-Insurance Brokers,5,,,,-0.23124700702629677,
-Insurance Brokers,10,,,,-0.23124700702629677,
-Insurance Brokers,20,,,,-0.23124700702629677,
-Insurance Brokers,25,,,,-0.23124700702629677,
-Insurance Brokers,50,,,,-0.23124700702629677,
-Integrated Freight & Logistics,1,,,,-4.492873447606553,
-Integrated Freight & Logistics,5,,,,-1.329586366818608,
-Integrated Freight & Logistics,10,,,,-0.10774886451609407,
-Integrated Freight & Logistics,20,,,,-0.005762226335952904,
-Integrated Freight & Logistics,25,,,,-0.0004660707497592415,
-Integrated Freight & Logistics,50,,,,0.016763351841181343,
-Internet Content & Information,1,,,,-0.03328313276611789,
-Internet Content & Information,5,,,,-0.03328313276611789,
-Internet Content & Information,10,,,,-0.03328313276611789,
-Internet Content & Information,20,,,,0.10914488015273816,
-Internet Content & Information,25,,,,0.10914488015273816,
-Internet Content & Information,50,,,,0.29040411612326145,
-Internet Retail,1,,,,-0.08599057083633269,
-Internet Retail,5,,,,-0.05353484785535941,
-Internet Retail,10,,,,-0.012965194129142816,
-Internet Retail,20,,,,-0.003949715523316908,
-Internet Retail,25,,,,-0.0023486021665674647,
-Internet Retail,50,,,,0.0112245728841089,
-Leisure,1,,,,-5.976095439777238,
-Leisure,5,,,,-5.976095439777238,
-Leisure,10,,,,-5.774469161620125,
-Leisure,20,,,,-3.4251838281092537,
-Leisure,25,,,,-1.9548995453428852,
-Leisure,50,,,,-0.09826387432951961,
-Lodging,1,,,,-2.786590515860085,
-Lodging,5,,,,-1.1268764728348635,
-Lodging,10,,,,-0.4492280228996558,
-Lodging,20,,,,-0.3792327672399484,
-Lodging,25,,,,-0.3452127194656966,
-Lodging,50,,,,-0.08175188585765963,
-Lumber & Wood Production,1,,,,-0.1320444383739825,
-Lumber & Wood Production,5,,,,-0.06359011154922596,
-Lumber & Wood Production,10,,,,-0.0032318468128244575,
-Lumber & Wood Production,20,,,,0.012694384142182822,
-Lumber & Wood Production,25,,,,0.01670577628006729,
-Lumber & Wood Production,50,,,,0.04622656584439848,
-Luxury Goods,1,,,,-1.8291836325414914,
-Luxury Goods,5,,,,-1.5710695648322823,
-Luxury Goods,10,,,,-0.2736909364444602,
-Luxury Goods,20,,,,0.0036319855177175085,
-Luxury Goods,25,,,,0.005524615050812226,
-Luxury Goods,50,,,,0.02381290272418032,
-Marine Shipping,1,,,,0.0314558381621319,
-Marine Shipping,5,,,,0.047542868678745694,
-Marine Shipping,10,,,,0.16220899310476328,
-Marine Shipping,20,,,,0.17508643445968802,
-Marine Shipping,25,,,,0.1853244850594155,
-Marine Shipping,50,,,,0.25584859369459756,
-Medical Care Facilities,1,,,,-0.26365332843309536,
-Medical Care Facilities,5,,,,-0.03578655753988717,
-Medical Care Facilities,10,,,,-0.0277120990300277,
-Medical Care Facilities,20,,,,0.04329210128818914,
-Medical Care Facilities,25,,,,0.06202016777380063,
-Medical Care Facilities,50,,,,0.08776813050783075,
-Medical Devices,1,,,,-0.2780474503678899,
-Medical Devices,5,,,,-0.19260041243583778,
-Medical Devices,10,,,,-0.08579161502077265,
-Medical Devices,20,,,,0.06027443833195314,
-Medical Devices,25,,,,0.06575592353091166,
-Medical Devices,50,,,,0.07489173219584253,
-Medical Distribution,1,,,,-0.0035272231664993992,
-Medical Distribution,5,,,,-0.0035272231664993992,
-Medical Distribution,10,,,,-0.0035272231664993992,
-Medical Distribution,20,,,,-0.0035272231664993992,
-Medical Distribution,25,,,,-0.0035272231664993992,
-Medical Distribution,50,,,,0.009844172375938055,
-Medical Instruments & Supplies,1,,,,-0.006086198710320885,
-Medical Instruments & Supplies,5,,,,0.001703185651904901,
-Medical Instruments & Supplies,10,,,,0.01143991610468713,
-Medical Instruments & Supplies,20,,,,0.05236033573444547,
-Medical Instruments & Supplies,25,,,,0.08086315507089732,
-Medical Instruments & Supplies,50,,,,0.17799081059296196,
-Metal Fabrication,1,,,,-0.2110805183237318,
-Metal Fabrication,5,,,,-0.0722481459180666,
-Metal Fabrication,10,,,,-0.03474357866677892,
-Metal Fabrication,20,,,,0.014624929197283254,
-Metal Fabrication,25,,,,0.017648559235130343,
-Metal Fabrication,50,,,,0.05384880290972273,
-Mortgage Finance,1,,,,-5.2937205594938455,
-Mortgage Finance,5,,,,-2.8106075253801155,
-Mortgage Finance,10,,,,-0.3274944912663849,
-Mortgage Finance,20,,,,0.14558960168025786,
-Mortgage Finance,25,,,,0.15020103648577787,
-Mortgage Finance,50,,,,0.3170764132631909,
-Oil & Gas Drilling,1,,,,-2.8824163788961368,
-Oil & Gas Drilling,5,,,,-2.8824163788961368,
-Oil & Gas Drilling,10,,,,-2.8824163788961368,
-Oil & Gas Drilling,20,,,,-2.8824163788961368,
-Oil & Gas Drilling,25,,,,-2.8824163788961368,
-Oil & Gas Drilling,50,,,,-2.8824163788961368,
-Oil & Gas E&P,1,,,,-0.36232500422978686,
-Oil & Gas E&P,5,,,,-0.224137728584014,
-Oil & Gas E&P,10,,,,-0.051403634026797956,
-Oil & Gas E&P,20,,,,0.17890849204949,
-Oil & Gas E&P,25,,,,0.17890849204949,
-Oil & Gas E&P,50,,,,0.30254941261713597,
-Oil & Gas Equipment & Services,1,,,,-0.851382362763017,
-Oil & Gas Equipment & Services,5,,,,-0.39702644280730465,
-Oil & Gas Equipment & Services,10,,,,-0.018396509510877852,
-Oil & Gas Equipment & Services,20,,,,0.015001094522846606,
-Oil & Gas Equipment & Services,25,,,,0.06509750057343322,
-Oil & Gas Equipment & Services,50,,,,0.08118901819924826,
-Oil & Gas Integrated,1,,,,0.07223393862893113,
-Oil & Gas Integrated,5,,,,0.07223393862893113,
-Oil & Gas Integrated,10,,,,0.07223393862893113,
-Oil & Gas Integrated,20,,,,0.07223393862893113,
-Oil & Gas Integrated,25,,,,0.07223393862893113,
-Oil & Gas Integrated,50,,,,0.1379242573311245,
-Oil & Gas Refining & Marketing,1,,,,0.005133684799772657,
-Oil & Gas Refining & Marketing,5,,,,0.014370603110557302,
-Oil & Gas Refining & Marketing,10,,,,0.020574218497465498,
-Oil & Gas Refining & Marketing,20,,,,0.030771041034815684,
-Oil & Gas Refining & Marketing,25,,,,0.03158861773514199,
-Oil & Gas Refining & Marketing,50,,,,0.04692241225568776,
-Other Industrial Metals & Mining,1,,,,-5.117177527818837,
-Other Industrial Metals & Mining,5,,,,-0.36563791622714303,
-Other Industrial Metals & Mining,10,,,,-0.29123280464666396,
-Other Industrial Metals & Mining,20,,,,0.010117181111121441,
-Other Industrial Metals & Mining,25,,,,0.022839383211580924,
-Other Industrial Metals & Mining,50,,,,0.05900693974299791,
-Other Precious Metals & Mining,1,,,,0.012625010299301503,
-Other Precious Metals & Mining,5,,,,0.04718501606436266,
-Other Precious Metals & Mining,10,,,,0.09038502327068909,
-Other Precious Metals & Mining,20,,,,0.17678503768334197,
-Other Precious Metals & Mining,25,,,,0.2199850448896684,
-Other Precious Metals & Mining,50,,,,0.4359850809213006,
-Packaged Foods,1,,,,-0.42940503658922524,
-Packaged Foods,5,,,,-0.17603860492004092,
-Packaged Foods,10,,,,-0.024411312586940192,
-Packaged Foods,20,,,,0.006022512465223134,
-Packaged Foods,25,,,,0.01088824267890593,
-Packaged Foods,50,,,,0.030684963062405948,
-Packaging & Containers,1,,,,-3.7261516379453115,
-Packaging & Containers,5,,,,-0.10052656768387468,
-Packaging & Containers,10,,,,-0.018420831383627604,
-Packaging & Containers,20,,,,0.008942661896810419,
-Packaging & Containers,25,,,,0.01867909373885962,
-Packaging & Containers,50,,,,0.04069744394078116,
-Paper & Paper Products,1,,,,-26.739445709826132,
-Paper & Paper Products,5,,,,-0.034103978347663204,
-Paper & Paper Products,10,,,,-0.02633078333161965,
-Paper & Paper Products,20,,,,-0.008028141949983374,
-Paper & Paper Products,25,,,,0.008166056140364088,
-Paper & Paper Products,50,,,,0.04883475758299233,
-Personal Services,1,,,,-0.5710766101716357,
-Personal Services,5,,,,-0.5661328457048913,
-Personal Services,10,,,,-0.5599531401214608,
-Personal Services,20,,,,-0.5475937289545998,
-Personal Services,25,,,,-0.5414140233711693,
-Personal Services,50,,,,-0.3407284626962759,
-Pharmaceutical Retailers,1,,,,0.00886974368553347,
-Pharmaceutical Retailers,5,,,,0.011800083698042915,
-Pharmaceutical Retailers,10,,,,0.015463008713679718,
-Pharmaceutical Retailers,20,,,,0.01729447122149812,
-Pharmaceutical Retailers,25,,,,0.01729447122149812,
-Pharmaceutical Retailers,50,,,,0.06532641419616018,
-Pollution & Treatment Controls,1,,,,0.050807212738790596,
-Pollution & Treatment Controls,5,,,,0.05455331575774028,
-Pollution & Treatment Controls,10,,,,0.05923594453142738,
-Pollution & Treatment Controls,20,,,,0.06860120207880159,
-Pollution & Treatment Controls,25,,,,0.07328383085248869,
-Pollution & Treatment Controls,50,,,,0.0966969747209242,
-Publishing,1,,,,-0.7344123302325642,
-Publishing,5,,,,-0.599650806543642,
-Publishing,10,,,,-0.060604711787953736,
-Publishing,20,,,,-0.02223116626972798,
-Publishing,25,,,,0.013654635639485328,
-Publishing,50,,,,0.05130181692604115,
-REIT - Office,1,,,,0.19552029170869695,
-REIT - Office,5,,,,0.1990604593780543,
-REIT - Office,10,,,,0.20348566896475098,
-REIT - Office,20,,,,0.2123360881381444,
-REIT - Office,25,,,,0.2167612977248411,
-REIT - Office,50,,,,0.23888734565832456,
-Railroads,1,,,,0.016342839128974926,
-Railroads,5,,,,0.016342839128974926,
-Railroads,10,,,,0.021026709565422477,
-Railroads,20,,,,0.0280525152200938,
-Railroads,25,,,,0.04242515281629818,
-Railroads,50,,,,0.06175410514813676,
-Real Estate - Development,1,,,,-28.192841877009336,
-Real Estate - Development,5,,,,-3.855316094017045,
-Real Estate - Development,10,,,,-1.2154941351718005,
-Real Estate - Development,20,,,,-0.5343970442102677,
-Real Estate - Development,25,,,,-0.3305542461481951,
-Real Estate - Development,50,,,,0.04578723593454474,
-Real Estate - Diversified,1,,,,-12.484791444289911,
-Real Estate - Diversified,5,,,,-7.004159033889781,
-Real Estate - Diversified,10,,,,-4.720562196223061,
-Real Estate - Diversified,20,,,,-1.0944914274201816,
-Real Estate - Diversified,25,,,,-1.0944914274201816,
-Real Estate - Diversified,50,,,,-0.12106133258005322,
-Real Estate Services,1,,,,-6.158086278500412,
-Real Estate Services,5,,,,-1.160189694154619,
-Real Estate Services,10,,,,-0.7818479710910048,
-Real Estate Services,20,,,,-0.23590374316940854,
-Real Estate Services,25,,,,-0.011593157087365004,
-Real Estate Services,50,,,,0.21576168150234976,
-Rental & Leasing Services,1,,,,-0.17277727687440345,
-Rental & Leasing Services,5,,,,-0.10871515991879868,
-Rental & Leasing Services,10,,,,-0.028637513724292754,
-Rental & Leasing Services,20,,,,0.07813268120171513,
-Rental & Leasing Services,25,,,,0.07813268120171513,
-Rental & Leasing Services,50,,,,0.13255179704059095,
-Residential Construction,1,,,,,
-Residential Construction,5,,,,,
-Residential Construction,10,,,,,
-Residential Construction,20,,,,,
-Residential Construction,25,,,,,
-Residential Construction,50,,,,,
-Resorts & Casinos,1,,,,-1.446183021373593,
-Resorts & Casinos,5,,,,-1.1979928420829695,
-Resorts & Casinos,10,,,,-0.8877551179696904,
-Resorts & Casinos,20,,,,-0.2672796697431321,
-Resorts & Casinos,25,,,,0.04295805437014691,
-Resorts & Casinos,50,,,,0.04295805437014691,
-Restaurants,1,,,,-0.40764287418971734,
-Restaurants,5,,,,-0.40764287418971734,
-Restaurants,10,,,,-0.27385377423733503,
-Restaurants,20,,,,-0.14386467450559529,
-Restaurants,25,,,,-0.12075012861474323,
-Restaurants,50,,,,0.013067091783616362,
-Scientific & Technical Instruments,1,,,,-0.2617870326402538,
-Scientific & Technical Instruments,5,,,,-0.226647827595161,
-Scientific & Technical Instruments,10,,,,-0.18272382128879497,
-Scientific & Technical Instruments,20,,,,-0.09487580867606285,
-Scientific & Technical Instruments,25,,,,-0.05095180236969684,
-Scientific & Technical Instruments,50,,,,0.05260878309421342,
-Security & Protection Services,1,,,,-3.3712787011675402,
-Security & Protection Services,5,,,,-2.415573321452656,
-Security & Protection Services,10,,,,-1.2209415968090511,
-Security & Protection Services,20,,,,-0.1512861688155381,
-Security & Protection Services,25,,,,-0.11131146280391781,
-Security & Protection Services,50,,,,0.01539303526578368,
-Semiconductor Equipment & Materials,1,,,,0.005372545027290545,
-Semiconductor Equipment & Materials,5,,,,0.005372545027290545,
-Semiconductor Equipment & Materials,10,,,,0.005372545027290545,
-Semiconductor Equipment & Materials,20,,,,0.005372545027290545,
-Semiconductor Equipment & Materials,25,,,,0.005372545027290545,
-Semiconductor Equipment & Materials,50,,,,0.005372545027290545,
-Semiconductors,1,,,,-0.881120704812913,
-Semiconductors,5,,,,-0.8422882302191175,
-Semiconductors,10,,,,-0.793747636976873,
-Semiconductors,20,,,,-0.696666450492384,
-Semiconductors,25,,,,-0.6481258572501395,
-Semiconductors,50,,,,-0.405422891038917,
-Shell Companies,1,,,,,
-Shell Companies,5,,,,,
-Shell Companies,10,,,,,
-Shell Companies,20,,,,,
-Shell Companies,25,,,,,
-Shell Companies,50,,,,,
-Software - Application,1,,,,-36.953556243643234,
-Software - Application,5,,,,-2.22839089228089,
-Software - Application,10,,,,-2.182120076052874,
-Software - Application,20,,,,-0.11449925915827443,
-Software - Application,25,,,,-0.07926249524016635,
-Software - Application,50,,,,0.05792372079294332,
-Software - Infrastructure,1,,,,-4.031358030091783,
-Software - Infrastructure,5,,,,-0.23608557904025088,
-Software - Infrastructure,10,,,,-0.19648965393093948,
-Software - Infrastructure,20,,,,-0.01193360664604513,
-Software - Infrastructure,25,,,,0.0300888570184204,
-Software - Infrastructure,50,,,,0.11382639701199972,
-Solar,1,,,,-1.4214919949240898,
-Solar,5,,,,-1.3405653750678257,
-Solar,10,,,,-1.0528895159627258,
-Solar,20,,,,-0.20938035909133773,
-Solar,25,,,,-0.20319276165396571,
-Solar,50,,,,0.012943858009213494,
-Specialty Business Services,1,,,,-0.6559056471006808,
-Specialty Business Services,5,,,,-0.09123817497700501,
-Specialty Business Services,10,,,,-0.030146467982200754,
-Specialty Business Services,20,,,,0.0204410111026246,
-Specialty Business Services,25,,,,0.025244291156735477,
-Specialty Business Services,50,,,,0.0715697181634713,
-Specialty Chemicals,1,,,,-0.37783968472005136,
-Specialty Chemicals,5,,,,-0.006125818712860479,
-Specialty Chemicals,10,,,,0.013913956017093939,
-Specialty Chemicals,20,,,,0.02871413162028523,
-Specialty Chemicals,25,,,,0.041417812944693246,
-Specialty Chemicals,50,,,,0.07422522419076408,
-Specialty Industrial Machinery,1,,,,-0.5329084186972914,
-Specialty Industrial Machinery,5,,,,-0.15258989249001745,
-Specialty Industrial Machinery,10,,,,-0.020304406928849047,
-Specialty Industrial Machinery,20,,,,0.022056749008749293,
-Specialty Industrial Machinery,25,,,,0.03424714940299192,
-Specialty Industrial Machinery,50,,,,0.08462717985538948,
-Specialty Retail,1,,,,-0.18558873534891382,
-Specialty Retail,5,,,,-0.18558873534891382,
-Specialty Retail,10,,,,-0.18558873534891382,
-Specialty Retail,20,,,,-0.07484138829836749,
-Specialty Retail,25,,,,-0.05661636692712111,
-Specialty Retail,50,,,,-0.03604545301633214,
-Staffing & Employment Services,1,,,,0.012004042558131499,
-Staffing & Employment Services,5,,,,0.012004042558131499,
-Staffing & Employment Services,10,,,,0.012004042558131499,
-Staffing & Employment Services,20,,,,0.012260970595357478,
-Staffing & Employment Services,25,,,,0.012485782627930212,
-Staffing & Employment Services,50,,,,0.018351081183739015,
-Steel,1,,,,-17.74754634646603,
-Steel,5,,,,-0.06215106946728715,
-Steel,10,,,,-0.00023949510703577211,
-Steel,20,,,,0.01266565980034804,
-Steel,25,,,,0.017802810057071423,
-Steel,50,,,,0.048487405513002235,
-Telecom Services,1,,,,-17.156452483308406,
-Telecom Services,5,,,,-11.476873949008882,
-Telecom Services,10,,,,-2.9575061475595983,
-Telecom Services,20,,,,-0.8985784627552315,
-Telecom Services,25,,,,-0.8043622060817276,
-Telecom Services,50,,,,0.047093760776761084,
-Textile Manufacturing,1,,,,-15.900919593437903,
-Textile Manufacturing,5,,,,-0.6077428706392184,
-Textile Manufacturing,10,,,,-0.14175673036790318,
-Textile Manufacturing,20,,,,-0.009062802913620755,
-Textile Manufacturing,25,,,,0.0019749144140131683,
-Textile Manufacturing,50,,,,0.027567977650113214,
-Thermal Coal,1,,,,-11.023535942400803,
-Thermal Coal,5,,,,-4.55619490121785,
-Thermal Coal,10,,,,-0.20317689272932335,
-Thermal Coal,20,,,,-0.07279783780747603,
-Thermal Coal,25,,,,0.014121532140422157,
-Thermal Coal,50,,,,0.034168633148484034,
-Tobacco,1,,,,-1.3097104854018593,
-Tobacco,5,,,,-0.8508185642965191,
-Tobacco,10,,,,-0.2772036629148439,
-Tobacco,20,,,,0.1110878032209438,
-Tobacco,25,,,,0.17874381351757723,
-Tobacco,50,,,,0.20417706367232732,
-Tools & Accessories,1,,,,-0.15003145052394473,
-Tools & Accessories,5,,,,-0.07914743214217304,
-Tools & Accessories,10,,,,0.01677747536572964,
-Tools & Accessories,20,,,,0.03685191342166375,
-Tools & Accessories,25,,,,0.04624484090938831,
-Tools & Accessories,50,,,,0.078479933325871,
-Travel Services,1,,,,-1.8839443635370068,
-Travel Services,5,,,,-1.265091254733387,
-Travel Services,10,,,,-0.6141400447236217,
-Travel Services,20,,,,-0.424450983328839,
-Travel Services,25,,,,-0.34912919564325645,
-Travel Services,50,,,,-0.10916206675634249,
-Trucking,1,,,,0.0010294906644575269,
-Trucking,5,,,,0.00768346203962569,
-Trucking,10,,,,0.016000926258585894,
-Trucking,20,,,,0.016000926258585894,
-Trucking,25,,,,0.01625057852705638,
-Trucking,50,,,,0.019497242977067245,
-Utilities - Independent Power Producers,1,,,,-15.032090735232675,
-Utilities - Independent Power Producers,5,,,,-0.11313528206785642,
-Utilities - Independent Power Producers,10,,,,-0.08345966356785245,
-Utilities - Independent Power Producers,20,,,,0.028551644624440996,
-Utilities - Independent Power Producers,25,,,,0.03388217468318098,
-Utilities - Independent Power Producers,50,,,,0.08150404580753548,
-Utilities - Regulated Electric,1,,,,0.027488633534434998,
-Utilities - Regulated Electric,5,,,,0.027488633534434998,
-Utilities - Regulated Electric,10,,,,0.028746547965838313,
-Utilities - Regulated Electric,20,,,,0.060954478366532075,
-Utilities - Regulated Electric,25,,,,0.10171888737915277,
-Utilities - Regulated Electric,50,,,,0.11265852398756945,
-Utilities - Regulated Gas,1,,,,0.049517065833709156,
-Utilities - Regulated Gas,5,,,,0.07473452859088749,
-Utilities - Regulated Gas,10,,,,0.08824388363937588,
-Utilities - Regulated Gas,20,,,,0.09224467689864654,
-Utilities - Regulated Gas,25,,,,0.09324487521346421,
-Utilities - Regulated Gas,50,,,,0.1438428444054054,
-Utilities - Renewable,1,,,,-0.4503541047445923,
-Utilities - Renewable,5,,,,-0.2289362031711688,
-Utilities - Renewable,10,,,,-0.2289362031711688,
-Utilities - Renewable,20,,,,-0.09179073021752165,
-Utilities - Renewable,25,,,,-0.034210622664189234,
-Utilities - Renewable,50,,,,0.1301230901875562,
-Waste Management,1,,,,-0.11824352596053117,
-Waste Management,5,,,,-0.09632558597925009,
-Waste Management,10,,,,-0.0657155702716724,
-Waste Management,20,,,,0.008029896268826005,
-Waste Management,25,,,,0.008029896268826005,
-Waste Management,50,,,,0.06043866056650507,
+industry,percentile,revenue_cagr,net_profit_margin_avg
+Advertising Agencies,1,1.075068327331213,0.24343509072690867
+Advertising Agencies,5,0.950701441641911,0.2296497012156574
+Advertising Agencies,10,0.7952428345302838,0.21241796432659335
+Aerospace & Defense,1,1.0041629067267133,0.2933416259026547
+Aerospace & Defense,5,0.8435138088365902,0.285365538355324
+Aerospace & Defense,10,0.4686659137596376,0.2426868168229735
+Agricultural Inputs,1,1.0203910786673671,0.28178676429802973
+Agricultural Inputs,5,0.4464843072906754,0.25241581285414033
+Agricultural Inputs,10,0.29116799037666535,0.16914855314622596
+Airlines,1,0.6800728654664094,-0.13266780085658
+Airlines,5,0.6800728654664094,-0.13266780085658
+Airlines,10,0.6800728654664094,-0.13266780085658
+Airports & Air Services,1,1.2066508053877143,0.22502115847398074
+Airports & Air Services,5,1.2066508053877143,0.18023293741214447
+Airports & Air Services,10,1.2066508053877143,0.12424766108484936
+Aluminum,1,0.35440955440355665,3.000664214430305
+Aluminum,5,0.3371149345238837,0.9511509313627393
+Aluminum,10,0.3332999448445441,0.2560312415209469
+Apparel Manufacturing,1,5.220562020916872,0.3008062452776745
+Apparel Manufacturing,5,1.1677284845389695,0.1336631359442117
+Apparel Manufacturing,10,0.4168593728606111,0.12691672410935084
+Apparel Retail,1,0.6084034922596275,0.1470176825225449
+Apparel Retail,5,0.580081741332071,0.1470176825225449
+Apparel Retail,10,0.5712311941672097,0.12369918187731294
+Asset Management,1,8.317128150179549,11346.254092186306
+Asset Management,5,7.524229482911366,291.4574922619823
+Asset Management,10,2.866391066089544,130.2057475093991
+Auto & Truck Dealerships,1,0.2516513688044595,0.0179513763947452
+Auto & Truck Dealerships,5,0.2516513688044595,0.0179513763947452
+Auto & Truck Dealerships,10,0.2516513688044595,0.0179513763947452
+Auto Manufacturers,1,16.770402246308752,0.1932681398026503
+Auto Manufacturers,5,12.997002355158576,0.18979425467258632
+Auto Manufacturers,10,1.114669176166321,0.1793725992823943
+Auto Parts,1,0.715964133878697,0.8091655000371811
+Auto Parts,5,0.3557425449411084,0.1516522582001916
+Auto Parts,10,0.3053328840739806,0.120316244871559
+Banks - Regional,1,0.6652261380014657,0.3627690509648961
+Banks - Regional,5,0.3557844889895938,0.3259372612183699
+Banks - Regional,10,0.2912482777078538,0.2867316687018821
+Beverages - Brewers,1,0.6337161410956016,0.051472706892026966
+Beverages - Brewers,5,0.6337161410956016,0.05066991393702202
+Beverages - Brewers,10,0.6337161410956016,0.04966642274326584
+Beverages - Non-Alcoholic,1,7.512845704194371,0.17111822907737817
+Beverages - Non-Alcoholic,5,7.512845704194371,0.15431573431480772
+Beverages - Non-Alcoholic,10,7.512845704194371,0.13331261586159468
+Beverages - Wineries & Distilleries,1,4.029609951728374,0.2052743397329566
+Beverages - Wineries & Distilleries,5,3.5761029421793085,0.19649445322058667
+Beverages - Wineries & Distilleries,10,0.8822380443684371,0.1467417629838246
+Biotechnology,1,5.265652028446205,0.41148152391570686
+Biotechnology,5,0.2332617282350837,0.3304358441792537
+Biotechnology,10,0.2122163036328702,0.31940738261815527
+Broadcasting,1,0.6358768692540455,0.459992543619366
+Broadcasting,5,0.2480661048451218,0.39451220990251845
+Broadcasting,10,0.2474351737451638,0.1325908750351329
+Building Materials,1,1.9574224159270373,4.971523644021436
+Building Materials,5,0.38925547189529885,0.1806819409591464
+Building Materials,10,0.3333173934277098,0.1313619376409861
+Building Products & Equipment,1,1.590169600712226,1.2696105240051891
+Building Products & Equipment,5,0.3833003140305973,0.152741145117285
+Building Products & Equipment,10,0.3312048178594163,0.1450441676996358
+Business Equipment & Supplies,1,0.5649439386078485,0.156130013298502
+Business Equipment & Supplies,5,0.5649439386078485,0.156130013298502
+Business Equipment & Supplies,10,0.5578419343170715,0.14923520615764174
+Capital Markets,1,3.846254508054538,17.644059135678887
+Capital Markets,5,1.9972721053176152,2.6080370492003686
+Capital Markets,10,0.9686770410512816,0.9216960531632624
+Chemicals,1,2.9649571688911163,25.93931150468884
+Chemicals,5,0.5113904606211788,0.32323864204433234
+Chemicals,10,0.2887288392321709,0.20926858210801952
+Coking Coal,1,4.861541990525716,0.014624719680789773
+Coking Coal,5,4.660481268273356,0.01439113106734127
+Coking Coal,10,4.409155365457908,0.01409914530053064
+Communication Equipment,1,1.5306432816026023,0.1943124287145918
+Communication Equipment,5,0.9801017232836142,0.1530209093752122
+Communication Equipment,10,0.5207011580614161,0.11518186665223094
+Computer Hardware,1,12.771346442149074,0.15917685949622298
+Computer Hardware,5,6.979084418022973,0.13014049813559864
+Computer Hardware,10,1.0551800751667604,0.1004442194713239
+Confectioners,1,1.182756841993673,0.2435731368577277
+Confectioners,5,0.4118174041225393,0.10838633328205209
+Confectioners,10,0.2673955960849083,0.0952768771338644
+Conglomerates,1,11.768571138223916,9.463895593803466
+Conglomerates,5,2.2054189851935018,1.1122062327671944
+Conglomerates,10,0.334103675315876,0.740381275131246
+Consulting Services,1,14.465582078747294,261.7651279885535
+Consulting Services,5,9.137668676402111,132.48405829860772
+Consulting Services,10,3.3640734257016764,0.2647824793456683
+Consumer Electronics,1,0.6453993787905393,0.0363968587555245
+Consumer Electronics,5,0.5708870500848683,0.0363968587555245
+Consumer Electronics,10,0.4777466392027796,0.0363968587555245
+Copper,1,0.4644519991410751,23.11559119891376
+Copper,5,0.4644519991410751,12.910937438037564
+Copper,10,0.4644519991410751,0.1551202369423302
+Credit Services,1,4.173791230693382,28.264932982819445
+Credit Services,5,2.0307338235164774,1.5375215507948767
+Credit Services,10,1.1559394969158718,0.7318198816260175
+Department Stores,1,0.5190568147300296,0.014889437339626076
+Department Stores,5,0.4512910239194595,0.013099967137901585
+Department Stores,10,0.3665837854062473,0.010863129385745983
+Diagnostics & Research,1,0.5668604231343122,0.21778714064040505
+Diagnostics & Research,5,0.18558741144599242,0.2159069700466316
+Diagnostics & Research,10,0.1605036606770236,0.2157832746128307
+Discount Stores,1,0.243301207842923,0.0498849455893104
+Discount Stores,5,0.243301207842923,0.0498849455893104
+Discount Stores,10,0.243301207842923,0.0498849455893104
+Drug Manufacturers - General,1,0.1668935151464645,0.2850548185330985
+Drug Manufacturers - General,5,0.1668935151464645,0.2850548185330985
+Drug Manufacturers - General,10,0.16578657857045914,0.27477153254417375
+Drug Manufacturers - Specialty & Generic,1,0.8178248434604464,0.359579981654902
+Drug Manufacturers - Specialty & Generic,5,0.3802543716905247,0.2496820603478305
+Drug Manufacturers - Specialty & Generic,10,0.27597294321688937,0.19202360206529986
+Education & Training Services,1,4.2166375518207735,0.6519853245242949
+Education & Training Services,5,3.9738782189855524,0.47297272571240034
+Education & Training Services,10,3.609739219732724,0.3621975468181943
+Electrical Equipment & Parts,1,1.6900400553238155,0.19255407666118737
+Electrical Equipment & Parts,5,0.508832365226913,0.1460540977110527
+Electrical Equipment & Parts,10,0.37298236857996186,0.1326474714908636
+Electronic Components,1,2.626108621810508,0.29803984095694797
+Electronic Components,5,2.301576062048358,0.18366210010180764
+Electronic Components,10,0.9367265741394957,0.15233559052765214
+Electronic Gaming & Multimedia,1,7.9704625545559225,28.134820970026418
+Electronic Gaming & Multimedia,5,7.3490627954857155,25.841197589002007
+Electronic Gaming & Multimedia,10,6.572313096647958,22.974168362721503
+Electronics & Computer Distribution,1,1.01965089258135,0.36431683740009946
+Electronics & Computer Distribution,5,1.01965089258135,0.21316174612828248
+Electronics & Computer Distribution,10,0.7548259399928015,0.1501804580983587
+Engineering & Construction,1,7.332496900175341,0.933267209609387
+Engineering & Construction,5,0.8041752608880048,0.2143782563905591
+Engineering & Construction,10,0.4638688076230675,0.18210140712982564
+Entertainment,1,2.5146054965093056,0.48707733972619
+Entertainment,5,2.280134684664784,0.36101863424625263
+Entertainment,10,1.3967272467748766,0.2391576773153405
+Farm & Heavy Construction Machinery,1,0.6003583814161917,4.374468112714344
+Farm & Heavy Construction Machinery,5,0.5428534408869079,2.1460908571186192
+Farm & Heavy Construction Machinery,10,0.4687749572292884,0.18909755026190067
+Farm Products,1,0.9743769321250233,20.897786670175638
+Farm Products,5,0.5970929688357673,0.9558329975919027
+Farm Products,10,0.31543662141796924,0.21783171844288918
+Financial Conglomerates,1,0.6316018054031807,1.2035085941693842
+Financial Conglomerates,5,0.6316018054031807,1.2035085941693842
+Financial Conglomerates,10,0.5075263681489977,0.8493004472206904
+Financial Data & Stock Exchanges,1,0.5006026445046174,0.3640817847272646
+Financial Data & Stock Exchanges,5,0.5006026445046174,0.35860292379177877
+Financial Data & Stock Exchanges,10,0.5006026445046174,0.3517543476224215
+Food Distribution,1,2.8973177007998387,0.18863363168137426
+Food Distribution,5,2.7248190697162626,0.1792565733217642
+Food Distribution,10,2.375315149813842,0.08009611190349011
+Footwear & Accessories,1,0.8025192026791785,0.1302661831231901
+Footwear & Accessories,5,0.6294599959646802,0.11763527864855369
+Footwear & Accessories,10,0.48849764686528396,0.10228279627187097
+"Furnishings, Fixtures & Appliances",1,5.528918635153749,2.0053049961481397
+"Furnishings, Fixtures & Appliances",5,0.6238889400502172,0.26565763802237596
+"Furnishings, Fixtures & Appliances",10,0.34382269786961817,0.12658251178419447
+Grocery Stores,1,0.21036038555281,0.0384958665532017
+Grocery Stores,5,0.21036038555281,0.0384958665532017
+Grocery Stores,10,0.21036038555281,0.0384958665532017
+Health Information Services,1,0.194812290500842,0.1219071574989417
+Health Information Services,5,0.194812290500842,0.1219071574989417
+Health Information Services,10,0.194812290500842,0.1219071574989417
+Healthcare Plans,1,0.2528816238435509,0.1241523096168705
+Healthcare Plans,5,0.2528816238435509,0.1241523096168705
+Healthcare Plans,10,0.2528816238435509,0.1241523096168705
+Home Improvement Retail,1,0.3333890612334356,0.0133940221438309
+Home Improvement Retail,5,0.3333890612334356,0.0133940221438309
+Home Improvement Retail,10,0.3333890612334356,0.0133940221438309
+Household & Personal Products,1,0.8680769977296605,0.22630741006848945
+Household & Personal Products,5,0.7641131843609843,0.21340862288292892
+Household & Personal Products,10,0.5474507919027143,0.20188418134696215
+Industrial Distribution,1,6.162626366803881,1.9734115655444249
+Industrial Distribution,5,4.733869122255058,1.6299442135649316
+Industrial Distribution,10,2.9479225665690376,1.2006100235905672
+Information Technology Services,1,12.868718349912264,5.820839984187227
+Information Technology Services,5,1.1099831770576465,0.2789290359268473
+Information Technology Services,10,0.454234488974524,0.20726242504056513
+Infrastructure Operations,1,0.396451658234263,0.253663760325546
+Infrastructure Operations,5,0.3847012739771257,0.15497115530289304
+Infrastructure Operations,10,0.3784064252679451,0.1021001168979006
+Insurance - Diversified,1,0.1494713557079225,0.0920469429476734
+Insurance - Diversified,5,0.1494713557079225,0.0920469429476734
+Insurance - Diversified,10,0.1494713557079225,0.0920469429476734
+Insurance - Life,1,0.4155696095632322,0.0260163126639836
+Insurance - Life,5,0.4155696095632322,0.0260163126639836
+Insurance - Life,10,0.38818121245716536,0.025276887451829044
+Insurance - Property & Casualty,1,0.3427151806675452,-0.0007135369922009
+Insurance - Property & Casualty,5,0.3427151806675452,-0.0007135369922009
+Insurance - Property & Casualty,10,0.3427151806675452,-0.0007135369922009
+Insurance - Reinsurance,1,-0.4541903715509604,0.4932228966405508
+Insurance - Reinsurance,5,-0.4541903715509604,0.4932228966405508
+Insurance - Reinsurance,10,-0.4541903715509604,0.4932228966405508
+Insurance Brokers,1,0.5709743148411435,-0.2312470070262967
+Insurance Brokers,5,0.5709743148411435,-0.2312470070262967
+Insurance Brokers,10,0.5709743148411435,-0.2312470070262967
+Integrated Freight & Logistics,1,0.41254169990582223,0.18238647669779678
+Integrated Freight & Logistics,5,0.3070002587661944,0.13717877304278062
+Integrated Freight & Logistics,10,0.2852409077455915,0.09602535747448004
+Internet Content & Information,1,0.6625767891753751,2.36659847642424
+Internet Content & Information,5,0.5059137488813635,2.36659847642424
+Internet Content & Information,10,0.3100849485138492,2.36659847642424
+Internet Retail,1,37.09279950635243,9.91463651396844
+Internet Retail,5,37.09279950635243,9.91463651396844
+Internet Retail,10,37.09279950635243,9.91463651396844
+Leisure,1,1.5105026201185765,0.20250819790871452
+Leisure,5,1.4176851674917135,0.17171140850923675
+Leisure,10,1.2559266459843892,0.1292897384106505
+Lodging,1,1.1913355511986938,1.4506518263006207
+Lodging,5,0.7946582334240614,0.3315057834542752
+Lodging,10,0.7806225633808577,0.1342732563742896
+Lumber & Wood Production,1,0.25361832202245504,0.120363764828229
+Lumber & Wood Production,5,0.24442322044361572,0.11637138959457785
+Lumber & Wood Production,10,0.236760635794583,0.1130444102332019
+Luxury Goods,1,4.605996299881556,0.17502757742368977
+Luxury Goods,5,0.697221322889671,0.1237064355457784
+Luxury Goods,10,0.510226154426096,0.07347190408048178
+Marine Shipping,1,0.7002344152064843,4.089587046550344
+Marine Shipping,5,0.6859889140765032,3.9995443950866947
+Marine Shipping,10,0.4153243926068664,2.1449478267331754
+Medical Care Facilities,1,0.4313224344050073,0.20687069754709456
+Medical Care Facilities,5,0.3138513954596234,0.16777169939718214
+Medical Care Facilities,10,0.3084781642060575,0.1588467038990236
+Medical Devices,1,0.1897117481446229,0.7018310461246613
+Medical Devices,5,0.11266055778651586,0.7018310461246613
+Medical Devices,10,0.01634656983888247,0.7018310461246613
+Medical Distribution,1,0.34467176028293595,0.10493607264311765
+Medical Distribution,5,0.3370901782916569,0.09842911939889423
+Medical Distribution,10,0.32761320080255807,0.09029542784361498
+Medical Instruments & Supplies,1,0.41733682210203105,0.2907377015156097
+Medical Instruments & Supplies,5,0.37230540321799466,0.2837544931880014
+Medical Instruments & Supplies,10,0.31601612961294934,0.275025482778491
+Metal Fabrication,1,1.0526434527152977,0.3109801777652606
+Metal Fabrication,5,0.6358260525051317,0.1816773667899985
+Metal Fabrication,10,0.5589401863364244,0.1549193770618174
+Mortgage Finance,1,0.5177563800541458,0.6040939868262699
+Mortgage Finance,5,0.4301701868645045,0.5981472719065488
+Mortgage Finance,10,0.3688458611838103,0.5922005569868276
+Oil & Gas Drilling,1,-0.2797068152364487,-2.8824163788961368
+Oil & Gas Drilling,5,-0.2797068152364487,-2.8824163788961368
+Oil & Gas Drilling,10,-0.2797068152364487,-2.8824163788961368
+Oil & Gas E&P,1,0.8737987529960065,0.3117449831677072
+Oil & Gas E&P,5,0.8737987529960065,0.3117449831677072
+Oil & Gas E&P,10,0.8737987529960065,0.3117449831677072
+Oil & Gas Equipment & Services,1,0.34793667286269286,0.1622747693040138
+Oil & Gas Equipment & Services,5,0.3234142185086949,0.1622747693040138
+Oil & Gas Equipment & Services,10,0.3029788398803634,0.1503612604145417
+Oil & Gas Integrated,1,0.2487595003003087,0.2036145760333179
+Oil & Gas Integrated,5,0.2487595003003087,0.2036145760333179
+Oil & Gas Integrated,10,0.2487595003003087,0.2036145760333179
+Oil & Gas Refining & Marketing,1,0.7116181299371955,0.2105940631821362
+Oil & Gas Refining & Marketing,5,0.4622423647634601,0.1742832679863942
+Oil & Gas Refining & Marketing,10,0.4201674467282514,0.1588131121323061
+Other Industrial Metals & Mining,1,2.259479178724775,0.3100009109326717
+Other Industrial Metals & Mining,5,0.6557019131936254,0.3013358681831786
+Other Industrial Metals & Mining,10,0.4704079223109212,0.2233504834377419
+Other Precious Metals & Mining,1,0.424043000108145,0.4359850809213006
+Other Precious Metals & Mining,5,0.424043000108145,0.4359850809213006
+Other Precious Metals & Mining,10,0.424043000108145,0.4359850809213006
+Packaged Foods,1,0.635130011528942,0.2127208783204387
+Packaged Foods,5,0.38054379650320924,0.1319339559590445
+Packaged Foods,10,0.3147817810255908,0.11806453702920185
+Packaging & Containers,1,0.6157215924138184,0.3548976521895628
+Packaging & Containers,5,0.4154411301935141,0.1617088426797337
+Packaging & Containers,10,0.2998365587371322,0.1216858477241195
+Paper & Paper Products,1,3.738071803107043,0.17050217108039897
+Paper & Paper Products,5,0.4419333271262347,0.1417699088190064
+Paper & Paper Products,10,0.42624878190729676,0.1345819756509898
+Personal Services,1,0.36550768117602533,0.3580080097770726
+Personal Services,5,0.33692175089120496,0.29511929788789654
+Personal Services,10,0.30118933803517967,0.2165084080264268
+Pharmaceutical Retailers,1,1.803947860571327,0.2477182267063105
+Pharmaceutical Retailers,5,1.7262149599338446,0.24096274643020732
+Pharmaceutical Retailers,10,1.6290488341369918,0.23251839608507838
+Pollution & Treatment Controls,1,0.17951167462696596,0.0966969747209242
+Pollution & Treatment Controls,5,0.17902327335391743,0.0966969747209242
+Pollution & Treatment Controls,10,0.17841277176260678,0.0966969747209242
+Publishing,1,0.4551466666453472,5.08106229373038
+Publishing,5,0.440617176863143,4.1407259133756975
+Publishing,10,0.3824992177343274,0.379380391957037
+REIT - Office,1,0.1396451687412402,0.2822543996079522
+REIT - Office,5,0.1386591786180786,0.27871423193859485
+REIT - Office,10,0.13742669096412663,0.2742890223518981
+Railroads,1,0.7649899548948864,0.2840747976172917
+Railroads,5,0.7649899548948864,0.2840747976172917
+Railroads,10,0.6828372756979112,0.22376493566184172
+Real Estate - Development,1,3.178781417015185,6.714963531241364
+Real Estate - Development,5,1.5468545961729714,0.670221212952882
+Real Estate - Development,10,0.9462295360536173,0.2969288327582193
+Real Estate - Diversified,1,0.7703157692484328,0.6376404967438253
+Real Estate - Diversified,5,0.7703157692484328,0.40131796263080444
+Real Estate - Diversified,10,0.686246793702592,0.3028502400837123
+Real Estate Services,1,3.4690908558382763,41.548149172020985
+Real Estate Services,5,1.2547772204520187,3.185321686437414
+Real Estate Services,10,0.9497144707995878,3.0797546759523975
+Rental & Leasing Services,1,0.7501833215889389,0.2852426129357032
+Rental & Leasing Services,5,0.7501833215889389,0.24670128225077198
+Rental & Leasing Services,10,0.7501833215889389,0.19852461889460815
+Resorts & Casinos,1,5.567270536331226,0.2522240487257134
+Resorts & Casinos,5,4.661493263589694,0.2522240487257134
+Resorts & Casinos,10,3.529271672662782,0.2522240487257134
+Restaurants,1,1.0955957863758847,0.0766248474552845
+Restaurants,5,0.5803320022799254,0.0766248474552845
+Restaurants,10,0.4666708734352296,0.052311027408636995
+Scientific & Technical Instruments,1,0.23357606782081852,0.0829626913808469
+Scientific & Technical Instruments,5,0.23028820826094024,0.0829626913808469
+Scientific & Technical Instruments,10,0.2261783838110924,0.0829626913808469
+Security & Protection Services,1,1.3305602605917046,0.0922303804435576
+Security & Protection Services,5,1.0002450225239379,0.0922303804435576
+Security & Protection Services,10,0.58735097493923,0.0922303804435576
+Semiconductor Equipment & Materials,1,0.4084581174297703,0.0053725450272905
+Semiconductor Equipment & Materials,5,0.4084581174297703,0.0053725450272905
+Semiconductor Equipment & Materials,10,0.4084581174297703,0.0053725450272905
+Semiconductors,1,0.2987871372182569,0.07031349298174672
+Semiconductors,5,0.27595242130852166,0.03147786979638637
+Semiconductors,10,0.2474090264213526,-0.017066659185313943
+Software - Application,1,1.4804681657823848,0.9027480990495327
+Software - Application,5,0.567343729098372,0.3043624562673201
+Software - Application,10,0.4387611838881917,0.2315015216268722
+Software - Infrastructure,1,1.1109687370152455,0.3847606116329859
+Software - Infrastructure,5,0.6739644633385415,0.3589624748369694
+Software - Infrastructure,10,0.49806991794076866,0.3436259389968302
+Solar,1,3.294640029756765,0.121673184696091
+Solar,5,1.5884394055140245,0.11234762425263352
+Solar,10,1.394504943872484,0.0843709429222611
+Specialty Business Services,1,5.011402423621684,14.106617743509839
+Specialty Business Services,5,1.2656881694648519,1.264616394321732
+Specialty Business Services,10,0.6720964541143828,0.6186576594837352
+Specialty Chemicals,1,0.8594113793309144,0.2693160148167911
+Specialty Chemicals,5,0.38333082530853957,0.19110042122588344
+Specialty Chemicals,10,0.3300206688004377,0.15233733248379247
+Specialty Industrial Machinery,1,1.1628267789750404,0.6102975177846478
+Specialty Industrial Machinery,5,0.5669987324280956,0.20631290048828907
+Specialty Industrial Machinery,10,0.412159294536142,0.1699448575006538
+Specialty Retail,1,0.3388826441894737,0.0398249686580235
+Specialty Retail,5,0.33308575081234504,0.0398249686580235
+Specialty Retail,10,0.3258396340909342,0.0398249686580235
+Staffing & Employment Services,1,0.4899415584468162,0.06107487268975868
+Staffing & Employment Services,5,0.4205360241599535,0.05833113681482383
+Staffing & Employment Services,10,0.33377910630137525,0.05490146697115527
+Steel,1,3.721933575102939,1.563732262868747
+Steel,5,0.8204737635836853,0.2895277220847673
+Steel,10,0.5429465852275335,0.1865417226841942
+Telecom Services,1,0.34298093674550567,0.972031600936494
+Telecom Services,5,0.317224468672914,0.704723126168041
+Telecom Services,10,0.31232213650091356,0.3037604140153652
+Textile Manufacturing,1,1.3991688893665093,3.870971116497935
+Textile Manufacturing,5,0.6113077114369004,0.4528794286678012
+Textile Manufacturing,10,0.337453280563329,0.16550413691355625
+Thermal Coal,1,5.501814696716984,0.2468421524040593
+Thermal Coal,5,2.674434931967844,0.2468421524040593
+Thermal Coal,10,0.7713908595405381,0.22765383920452295
+Tobacco,1,16.100366125236185,0.2716803439581119
+Tobacco,5,10.57164188618911,0.2716803439581119
+Tobacco,10,3.660736587380275,0.2716803439581119
+Tools & Accessories,1,3.369414495264664,0.31987086731560116
+Tools & Accessories,5,0.8944243970155868,0.1838997796690959
+Tools & Accessories,10,0.43081256314980576,0.17469057773993
+Travel Services,1,1.3896305913203293,0.3410251098778233
+Travel Services,5,1.2830542884839937,0.3410251098778233
+Travel Services,10,1.1740557969468326,0.313279864442177
+Trucking,1,0.33588099997092613,0.0635435821445225
+Trucking,5,0.28874582371449403,0.0635435821445225
+Trucking,10,0.229826853393954,0.0635435821445225
+Utilities - Independent Power Producers,1,1.011794688276127,0.4471542180467145
+Utilities - Independent Power Producers,5,0.5154865835332998,0.4038138029381864
+Utilities - Independent Power Producers,10,0.4117692948631255,0.2737925576126021
+Utilities - Regulated Electric,1,0.1665147832252125,0.3553599277091951
+Utilities - Regulated Electric,5,0.1665147832252125,0.3553599277091951
+Utilities - Regulated Electric,10,0.1526199086334004,0.312770446111208
+Utilities - Regulated Gas,1,3.5319899424589716,0.1733508037232484
+Utilities - Regulated Gas,5,1.6726073182524708,0.1733508037232484
+Utilities - Regulated Gas,10,0.6765094838561356,0.1682256632977643
+Utilities - Renewable,1,1.1470352957587115,0.4801205545561952
+Utilities - Renewable,5,1.1470352957587115,0.4801205545561952
+Utilities - Renewable,10,1.1466906991262449,0.3814216014583559
+Waste Management,1,11.08360605164423,0.5109918110804376
+Waste Management,5,6.809209866308793,0.3855955457852392
+Waste Management,10,2.2747817557934233,0.25145786837783013
