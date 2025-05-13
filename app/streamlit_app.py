@@ -121,6 +121,10 @@ filtered = filter_stocks(
     metrics, cutoffs, selected_inds, use_rev_cagr, rev_cagr_p, use_npm, npm_p, mc_range
 )
 
+# Compute industry counts (from the full metrics table)
+industry_counts = metrics['industry'].value_counts().to_dict()
+filtered['industry_count'] = filtered['industry'].map(industry_counts)
+
 # Main area
 st.title("Stock Screener: Growth & Profitability Leaders")
 metric_desc = []
@@ -137,7 +141,7 @@ st.write(
 )
 
 st.write(f"**{len(filtered)} stocks found**")
-show_cols = ["ticker", "industry", "revenue_cagr", "net_profit_margin_avg", "market_cap"]
+show_cols = ["ticker", "industry", "industry_count", "revenue_cagr", "net_profit_margin_avg", "market_cap"]
 st.dataframe(
     filtered[show_cols]
     .sort_values(by=["revenue_cagr", "net_profit_margin_avg", "market_cap"], ascending=False)
