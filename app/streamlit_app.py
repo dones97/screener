@@ -21,25 +21,45 @@ metrics, cutoffs = load_data()
 # Prepare sidebar controls
 st.sidebar.header("Screening Criteria")
 
-# Industry selection
-industries = ["All"] + sorted(metrics['industry'].dropna().unique())
-industry = st.sidebar.selectbox("Select Industry", industries)
+# Industry selection (multiple, with "All" default)
+all_industries = sorted(metrics['industry'].dropna().unique())
+industries_options = ["All"] + all_industries
+default_inds = ["All"]
+selected_inds = st.sidebar.multiselect(
+    "Select Industry/Industries",
+    options=industries_options,
+    default=default_inds,
+    help="Select one or more industries. 'All' includes all industries."
+)
+if "All" in selected_inds:
+    selected_inds = all_industries  # select all if 'All' is in selection
 
 # Percentile choices
 percentile_options = [1, 5, 10]
 rev_cagr_p = st.sidebar.selectbox("Revenue CAGR percentile (top)", percentile_options, index=2)
 npm_p = st.sidebar.selectbox("Net Profit Margin percentile (top)", percentile_options, index=2)
 
-# Market Cap slider
-min_mc = float(np.nanmin(metrics['market_cap']))
-max_mc = float(np.nanmax(metrics['market_cap']))
-market_cap_range = st.sidebar.slider(
-    "Market Cap Range",
-    min_value=min_mc,
-    max_value=max_mc,
-    value=(min_mc, max_mc),
-    step=1e6,
-    format="%.0f"
+# Market Cap slider (order-of-magnitude steps, from 100 crore)
+CRORE = 1e7  # 1 crore = 10 million
+mc_min = 100 * CRORE
+mc_max = float(np.nanmax(metrics['market_cap']))
+steps = []
+cur = mc_min
+while cur < mc_max:
+    steps.append(cur)
+    cur *= 10
+steps.append(mc_max)
+steps = sorted(list(set([int(x) for x in steps])))
+
+def display_cr(val):
+    return f"{val/1e7:.0f} Cr"
+
+mc_range = st.sidebar.select_slider(
+    "Market Cap Range (Cr)",
+    options=steps,
+    value=(steps[0], steps[-1]),
+    format_func=display_cr,
+    help="Move slider. Each step is one order of magnitude (e.g., 100 Cr, 1000 Cr, 10,000 Cr, etc.)"
 )
 
 # Main filtering logic
@@ -54,26 +74,15 @@ def get_cutoff(ind, metric, pct):
     else:
         return None
 
-def filter_stocks(df, cutoffs, industry, rev_cagr_p, npm_p, mc_range):
-    # Subset by industry if needed
+def filter_stocks(df, cutoffs, industries, rev_cagr_p, npm_p, mc_range):
     df = df.copy()
-    if industry != "All":
-        df = df[df['industry'] == industry]
+    df = df[df['industry'].isin(industries)]
 
-    # Get percentile cutoffs for each industry (or for selected industry)
-    if industry == "All":
-        # Apply per-industry cutoffs for each row
-        df['rev_cagr_cutoff'] = df.apply(
-            lambda row: get_cutoff(row['industry'], 'revenue_cagr', rev_cagr_p), axis=1)
-        df['npm_cutoff'] = df.apply(
-            lambda row: get_cutoff(row['industry'], 'net_profit_margin_avg', npm_p), axis=1)
-    else:
-        # Get cutoffs once
-        rev_cagr_cutoff = get_cutoff(industry, 'revenue_cagr', rev_cagr_p)
-        npm_cutoff = get_cutoff(industry, 'net_profit_margin_avg', npm_p)
-        df['rev_cagr_cutoff'] = rev_cagr_cutoff
-        df['npm_cutoff'] = npm_cutoff
-
+    # Get percentile cutoffs for each industry
+    df['rev_cagr_cutoff'] = df.apply(
+        lambda row: get_cutoff(row['industry'], 'revenue_cagr', rev_cagr_p), axis=1)
+    df['npm_cutoff'] = df.apply(
+        lambda row: get_cutoff(row['industry'], 'net_profit_margin_avg', npm_p), axis=1)
     # Apply metric cutoffs
     df = df[
         (df['revenue_cagr'] >= df['rev_cagr_cutoff']) &
@@ -86,14 +95,15 @@ def filter_stocks(df, cutoffs, industry, rev_cagr_p, npm_p, mc_range):
     ]
     return df
 
-filtered = filter_stocks(metrics, cutoffs, industry, rev_cagr_p, npm_p, market_cap_range)
+filtered = filter_stocks(metrics, cutoffs, selected_inds, rev_cagr_p, npm_p, mc_range)
 
 # Main area
 st.title("Stock Screener: Growth & Profitability Leaders")
+industry_display = ", ".join(selected_inds) if len(selected_inds) <= 5 else f"{len(selected_inds)} industries selected"
 st.write(
-    f"**Showing stocks in `{industry}` industry" +
-    ("" if industry == "All" else f" (top {rev_cagr_p}th pctile Revenue CAGR, top {npm_p}th pctile Net Profit Margin)") +
-    f", Market Cap between {market_cap_range[0]:,.0f} and {market_cap_range[1]:,.0f}**"
+    f"**Showing stocks in `{industry_display}`"
+    f" (top {rev_cagr_p}th pctile Revenue CAGR, top {npm_p}th pctile Net Profit Margin)"
+    f", Market Cap between {display_cr(mc_range[0])} and {display_cr(mc_range[1])}**"
 )
 
 st.write(f"**{len(filtered)} stocks found**")
