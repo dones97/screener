@@ -47,11 +47,11 @@ if not use_rev_cagr and not use_npm:
 # Percentile choices (only show if metric is selected)
 percentile_options = [1, 5, 10]
 if use_rev_cagr:
-    rev_cagr_p = st.sidebar.selectbox("Revenue CAGR percentile (top)", percentile_options, index=2)
+    rev_cagr_p = st.sidebar.selectbox("Revenue CAGR percentile (top)", percentile_options, index=0)
 else:
     rev_cagr_p = None
 if use_npm:
-    npm_p = st.sidebar.selectbox("Net Profit Margin percentile (top)", percentile_options, index=2)
+    npm_p = st.sidebar.selectbox("Net Profit Margin percentile (top)", percentile_options, index=0)
 else:
     npm_p = None
 
