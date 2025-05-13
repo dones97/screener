@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import yfinance as yf
 import numpy as np
@@ -5,11 +6,13 @@ import logging
 import time
 import random
 
-# Settings for batch test
-DATA_DIR = 'data'
-QUALIFIED_PATH = f"{DATA_DIR}/qualified_tickers.csv"
-METRICS_PATH = f"{DATA_DIR}/metrics_table_test.csv"
-BATCH_SIZE = 15  # Test with 15 tickers
+# Paths relative to repo root
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(REPO_ROOT, "data")
+QUALIFIED_PATH = os.path.join(DATA_DIR, "qualified_tickers.csv")
+METRICS_PATH = os.path.join(DATA_DIR, "metrics_table_test.csv")
+
+BATCH_SIZE = 10  # Number of tickers to test per run
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] %(levelname)s: %(message)s')
 
@@ -30,7 +33,7 @@ DISPLAY_METRICS_MAP = {
     "interest_coverage": "interestCoverage"
 }
 
-PER_TICKER_SLEEP = 0.2  # Looser constraint for speed
+PER_TICKER_SLEEP = 0.2
 MAX_RETRIES = 2
 
 def get_fin_row(fin, names):
@@ -94,11 +97,23 @@ def process_ticker_with_retries(ticker, min_years=4):
     return None
 
 def main():
+    if not os.path.exists(QUALIFIED_PATH):
+        logging.error(f"{QUALIFIED_PATH} not found! Place a qualified_tickers.csv in the data directory.")
+        return
+
     qualified_df = pd.read_csv(QUALIFIED_PATH)
-    tickers = qualified_df['YF_Ticker'].dropna().unique().tolist()[:BATCH_SIZE]
-    logging.info(f"Batch-testing {len(tickers)} tickers: {tickers}")
+    all_tickers = qualified_df['YF_Ticker'].dropna().unique().tolist()
+
+    if len(all_tickers) == 0:
+        logging.error("No tickers found in qualified_tickers.csv.")
+        return
+
+    # Randomly sample BATCH_SIZE tickers for this run (for reproducibility in workflow, can seed random here)
+    sample_tickers = random.sample(all_tickers, min(BATCH_SIZE, len(all_tickers)))
+    logging.info(f"Batch-testing {len(sample_tickers)} tickers: {sample_tickers}")
+
     records = []
-    for idx, ticker in enumerate(tickers):
+    for idx, ticker in enumerate(sample_tickers):
         metrics = process_ticker_with_retries(ticker, min_years=4)
         if metrics:
             records.append(metrics)
