@@ -68,14 +68,14 @@ steps.append(mc_max)
 steps = sorted(list(set([int(x) for x in steps])))
 
 def display_cr(val):
-    return f"{val/1e7:.0f} Cr"
+    return f"{val/1e7:,.0f} Cr"
 
 mc_range = st.sidebar.select_slider(
     "Market Cap Range (Cr)",
     options=steps,
     value=(steps[0], steps[-1]),
     format_func=display_cr,
-    help="Move slider. Each step is one order of magnitude (e.g., 100 Cr, 1000 Cr, 10,000 Cr, etc.)"
+    help="Move slider. Each step is one order of magnitude (e.g., 100 Cr, 1,000 Cr, 10,000 Cr, etc.)"
 )
 
 # Main filtering logic
@@ -138,6 +138,9 @@ display_df = display_df.rename(
     }
 )
 
+# Format Market Cap in crores with comma separators
+display_df['MCap'] = (display_df['MCap'] / 1e7).map('{:,.0f}'.format) + " Cr"
+
 # Reorder columns for display
 show_cols = ["Ticker", "Industry", "Ind Count", "Rev CAGR", "NPM Avg", "MCap"]
 
@@ -161,17 +164,27 @@ st.write(f"**{len(display_df)} stocks found**")
 # Display all columns without horizontal scroll (Streamlit 1.22+: use 'hide_index' and 'width')
 st.dataframe(
     display_df[show_cols]
-    .sort_values(by=["Rev CAGR", "NPM Avg", "MCap"], ascending=False)
+    .sort_values(by=["Rev CAGR", "NPM Avg", "Ind Count"], ascending=[False, False, False])
     .reset_index(drop=True),
     hide_index=True,
     use_container_width=True,
     column_order=show_cols,
 )
 
-# CSV export option
+# CSV export option (keeps original values for export)
+csv_export_df = filtered.rename(
+    columns={
+        'ticker': 'Ticker',
+        'industry': 'Industry',
+        'industry_count': 'Ind Count',
+        'revenue_cagr': 'Rev CAGR',
+        'net_profit_margin_avg': 'NPM Avg',
+        'market_cap': 'MCap'
+    }
+)[show_cols]
 st.download_button(
     "Download filtered results as CSV",
-    data=display_df[show_cols].to_csv(index=False),
+    data=csv_export_df.to_csv(index=False),
     file_name="filtered_stocks.csv",
     mime="text/csv"
 )
