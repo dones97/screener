@@ -34,10 +34,26 @@ selected_inds = st.sidebar.multiselect(
 if "All" in selected_inds:
     selected_inds = all_industries  # select all if 'All' is in selection
 
-# Percentile choices
+# Metric selection (checkboxes for Revenue CAGR and NPM)
+st.sidebar.markdown("**Select metrics to screen on:**")
+use_rev_cagr = st.sidebar.checkbox("Revenue CAGR", value=True)
+use_npm = st.sidebar.checkbox("Net Profit Margin Avg", value=True)
+
+if not use_rev_cagr and not use_npm:
+    st.sidebar.warning("At least one metric must be selected. Defaulting to both.")
+    use_rev_cagr = True
+    use_npm = True
+
+# Percentile choices (only show if metric is selected)
 percentile_options = [1, 5, 10]
-rev_cagr_p = st.sidebar.selectbox("Revenue CAGR percentile (top)", percentile_options, index=2)
-npm_p = st.sidebar.selectbox("Net Profit Margin percentile (top)", percentile_options, index=2)
+if use_rev_cagr:
+    rev_cagr_p = st.sidebar.selectbox("Revenue CAGR percentile (top)", percentile_options, index=2)
+else:
+    rev_cagr_p = None
+if use_npm:
+    npm_p = st.sidebar.selectbox("Net Profit Margin percentile (top)", percentile_options, index=2)
+else:
+    npm_p = None
 
 # Market Cap slider (order-of-magnitude steps, from 100 crore)
 CRORE = 1e7  # 1 crore = 10 million
@@ -74,20 +90,26 @@ def get_cutoff(ind, metric, pct):
     else:
         return None
 
-def filter_stocks(df, cutoffs, industries, rev_cagr_p, npm_p, mc_range):
+def filter_stocks(df, cutoffs, industries, use_rev_cagr, rev_cagr_p, use_npm, npm_p, mc_range):
     df = df.copy()
     df = df[df['industry'].isin(industries)]
 
-    # Get percentile cutoffs for each industry
-    df['rev_cagr_cutoff'] = df.apply(
-        lambda row: get_cutoff(row['industry'], 'revenue_cagr', rev_cagr_p), axis=1)
-    df['npm_cutoff'] = df.apply(
-        lambda row: get_cutoff(row['industry'], 'net_profit_margin_avg', npm_p), axis=1)
-    # Apply metric cutoffs
-    df = df[
-        (df['revenue_cagr'] >= df['rev_cagr_cutoff']) &
-        (df['net_profit_margin_avg'] >= df['npm_cutoff'])
-    ]
+    # Get percentile cutoffs for each industry as needed
+    if use_rev_cagr:
+        df['rev_cagr_cutoff'] = df.apply(
+            lambda row: get_cutoff(row['industry'], 'revenue_cagr', rev_cagr_p), axis=1)
+    if use_npm:
+        df['npm_cutoff'] = df.apply(
+            lambda row: get_cutoff(row['industry'], 'net_profit_margin_avg', npm_p), axis=1)
+
+    # Apply selected metric cutoffs
+    filter_cond = pd.Series(True, index=df.index)
+    if use_rev_cagr:
+        filter_cond = filter_cond & (df['revenue_cagr'] >= df['rev_cagr_cutoff'])
+    if use_npm:
+        filter_cond = filter_cond & (df['net_profit_margin_avg'] >= df['npm_cutoff'])
+    df = df[filter_cond]
+
     # Market cap filter
     df = df[
         (df['market_cap'] >= mc_range[0]) &
@@ -95,14 +117,22 @@ def filter_stocks(df, cutoffs, industries, rev_cagr_p, npm_p, mc_range):
     ]
     return df
 
-filtered = filter_stocks(metrics, cutoffs, selected_inds, rev_cagr_p, npm_p, mc_range)
+filtered = filter_stocks(
+    metrics, cutoffs, selected_inds, use_rev_cagr, rev_cagr_p, use_npm, npm_p, mc_range
+)
 
 # Main area
 st.title("Stock Screener: Growth & Profitability Leaders")
+metric_desc = []
+if use_rev_cagr:
+    metric_desc.append(f"top {rev_cagr_p}th pctile Revenue CAGR")
+if use_npm:
+    metric_desc.append(f"top {npm_p}th pctile Net Profit Margin")
+metric_desc_str = ", ".join(metric_desc) if metric_desc else "no metric selected"
 industry_display = ", ".join(selected_inds) if len(selected_inds) <= 5 else f"{len(selected_inds)} industries selected"
 st.write(
     f"**Showing stocks in `{industry_display}`"
-    f" (top {rev_cagr_p}th pctile Revenue CAGR, top {npm_p}th pctile Net Profit Margin)"
+    f" ({metric_desc_str})"
     f", Market Cap between {display_cr(mc_range[0])} and {display_cr(mc_range[1])}**"
 )
 
