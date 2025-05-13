@@ -6,7 +6,7 @@ import time
 import random
 
 # Settings for batch test
-DATA_DIR = '../data'
+DATA_DIR = 'data'
 QUALIFIED_PATH = f"{DATA_DIR}/qualified_tickers.csv"
 METRICS_PATH = f"{DATA_DIR}/metrics_table_test.csv"
 BATCH_SIZE = 15  # Test with 15 tickers
