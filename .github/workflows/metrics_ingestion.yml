@@ -1,17 +1,14 @@
-name: Update Metrics Table
+name: Metrics Ingestion Batch (Full Universe)
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '0 3 1 * *' # Runs at 03:00 UTC on the 1st of every month
-  workflow_dispatch:    # Allows manual trigger from GitHub UI
-
-permissions:
-  contents: write  # Grant write access to repository contents
+    # Runs at 03:00 UTC on the 1st day of every month
+    - cron: "0 3 1 * *"
 
 jobs:
   metrics-ingestion:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,13 +23,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run metrics ingestion batch script
+      - name: Run metrics ingestion batch (full)
         run: python data_pipeline/metrics_ingestion_batch.py
 
-      - name: Commit and push updated metrics
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/metrics_table.csv data/cutoffs_table.csv data/screener_data.db
-          git commit -m "Automated metrics update [skip ci]" || echo "No changes to commit"
-          git push
+      - name: Generate cutoffs table
+        run: python data_pipeline/gen_cutoffs_table.py
+
+      - name: Upload metrics and cutoffs tables
+        uses: actions/upload-artifact@v4
+        with:
+          name: metrics_and_cutoffs
+          path: |
+            data/metrics_table.csv
+            data/cutoffs_table.csv
