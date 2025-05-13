@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # Needed for pushing back to the repo
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -29,7 +32,18 @@ jobs:
       - name: Generate cutoffs table
         run: python data_pipeline/gen_cutoffs_table.py
 
-      - name: Upload metrics and cutoffs tables
+      - name: Commit and push updated metrics and cutoffs tables
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add data/metrics_table.csv data/cutoffs_table.csv
+          git commit -m "Update metrics and cutoffs tables [skip ci]" || echo "No changes to commit"
+          git push
+        env:
+          # GITHUB_TOKEN is automatically provided for Actions and allows pushes to the repo
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload metrics and cutoffs tables as artifact
         uses: actions/upload-artifact@v4
         with:
           name: metrics_and_cutoffs
