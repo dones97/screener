@@ -125,6 +125,22 @@ filtered = filter_stocks(
 industry_counts = metrics['industry'].value_counts().to_dict()
 filtered['industry_count'] = filtered['industry'].map(industry_counts)
 
+# Rename columns for display (so DataFrame columns match your intended display names)
+display_df = filtered.copy()
+display_df = display_df.rename(
+    columns={
+        'ticker': 'Ticker',
+        'industry': 'Industry',
+        'industry_count': 'Ind Count',
+        'revenue_cagr': 'Rev CAGR',
+        'net_profit_margin_avg': 'NPM Avg',
+        'market_cap': 'MCap'
+    }
+)
+
+# Reorder columns for display
+show_cols = ["Ticker", "Industry", "Ind Count", "Rev CAGR", "NPM Avg", "MCap"]
+
 # Main area
 st.title("Stock Screener: Growth & Profitability Leaders")
 metric_desc = []
@@ -140,19 +156,22 @@ st.write(
     f", Market Cap between {display_cr(mc_range[0])} and {display_cr(mc_range[1])}**"
 )
 
-st.write(f"**{len(filtered)} stocks found**")
-show_cols = ["Ticker", "Industry", "Ind Count", "Rev CAGR", "NPM Avg", "MCap"]
+st.write(f"**{len(display_df)} stocks found**")
+
+# Display all columns without horizontal scroll (Streamlit 1.22+: use 'hide_index' and 'width')
 st.dataframe(
-    filtered[show_cols]
-    .sort_values(by=["revenue_cagr", "net_profit_margin_avg", "market_cap"], ascending=False)
+    display_df[show_cols]
+    .sort_values(by=["Rev CAGR", "NPM Avg", "MCap"], ascending=False)
     .reset_index(drop=True),
-    use_container_width=True
+    hide_index=True,
+    use_container_width=True,
+    column_order=show_cols,
 )
 
 # CSV export option
 st.download_button(
     "Download filtered results as CSV",
-    data=filtered[show_cols].to_csv(index=False),
+    data=display_df[show_cols].to_csv(index=False),
     file_name="filtered_stocks.csv",
     mime="text/csv"
 )
