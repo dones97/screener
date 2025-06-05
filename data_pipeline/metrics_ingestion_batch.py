@@ -104,7 +104,7 @@ def main():
         "industry": str,
         "market_cap": "float64",
         "revenue_cagr": "float64",
-        "net_profit_margin_avg": "float64"
+        "net_profit_margin_avg": "float64",
         "roce": "float64"
     }, errors='ignore')
     metrics_df.to_csv(METRICS_PATH, index=False)
