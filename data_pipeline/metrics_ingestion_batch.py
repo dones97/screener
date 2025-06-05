@@ -5,6 +5,7 @@ import numpy as np
 import logging
 import time
 import random
+from data_pipeline.metrics_utils import calculate_avg_roce
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(REPO_ROOT, "data")
@@ -51,7 +52,6 @@ def extract_financials(ticker: str, min_years: int = 4):
         "industry": info.get("industry", None),
         "market_cap": info.get("marketCap", None)
     }
-
     # Robust row matching
     revenue = get_fin_row(fin, ["Total Revenue", "Revenue"])
     net_income = get_fin_row(fin, ["Net Income", "NetIncome"])
@@ -60,6 +60,7 @@ def extract_financials(ticker: str, min_years: int = 4):
     out["revenue_cagr"] = calculate_cagr(revenue.tail(min_years)) if len(revenue) >= min_years else None
     out["net_profit_margin_avg"] = (calculate_avg_margin(net_income.tail(min_years), revenue.tail(min_years))
                                     if len(net_income) >= min_years and len(revenue) >= min_years else None)
+    out["roce"] = calculate_avg_roce(fin, bal, min_years)
 
     return out
 
@@ -104,6 +105,7 @@ def main():
         "market_cap": "float64",
         "revenue_cagr": "float64",
         "net_profit_margin_avg": "float64"
+        "roce": "float64"
     }, errors='ignore')
     metrics_df.to_csv(METRICS_PATH, index=False)
     logging.info(f"Saved metrics for {len(metrics_df)} tickers to {METRICS_PATH}")
