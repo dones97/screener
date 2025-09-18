@@ -45,22 +45,30 @@ def calculate_avg_margin(net_income: pd.Series, revenue: pd.Series) -> float:
 def extract_financials(ticker: str, min_years: int = 4):
     t = yf.Ticker(ticker)
     fin = t.financials
+    bal = t.balance_sheet  # <-- FIX: add this line!
     cf = t.cashflow
     info = t.info
     out = {
         "ticker": ticker,
         "industry": info.get("industry", None),
-        "market_cap": info.get("marketCap", None)
+        "market_cap": info.get("marketCap", None),
+        "revenue_cagr": None,
+        "net_profit_margin_avg": None,
+        "roce": None
     }
     # Robust row matching
     revenue = get_fin_row(fin, ["Total Revenue", "Revenue"])
     net_income = get_fin_row(fin, ["Net Income", "NetIncome"])
 
     # Compute metrics for screening (both must have min_years)
-    out["revenue_cagr"] = calculate_cagr(revenue.tail(min_years)) if len(revenue) >= min_years else None
-    out["net_profit_margin_avg"] = (calculate_avg_margin(net_income.tail(min_years), revenue.tail(min_years))
-                                    if len(net_income) >= min_years and len(revenue) >= min_years else None)
-    out["roce"] = calculate_avg_roce(fin, bal, min_years)
+    if len(revenue) >= min_years:
+        out["revenue_cagr"] = calculate_cagr(revenue.tail(min_years))
+    if len(net_income) >= min_years and len(revenue) >= min_years:
+        out["net_profit_margin_avg"] = calculate_avg_margin(net_income.tail(min_years), revenue.tail(min_years))
+    try:
+        out["roce"] = calculate_avg_roce(fin, bal, min_years)
+    except Exception as e:
+        logging.warning(f"[{ticker}] ROCE calculation error: {e}")
 
     return out
 
@@ -72,7 +80,15 @@ def process_ticker_with_retries(ticker, min_years=4):
             logging.warning(f"[{ticker}] Error: {e} (attempt {attempt+1}/{MAX_RETRIES})")
             time.sleep(1)
     logging.error(f"[{ticker}] Failed after {MAX_RETRIES} attempts")
-    return None
+    # Always return a dict with expected keys if failed
+    return {
+        "ticker": ticker,
+        "industry": None,
+        "market_cap": None,
+        "revenue_cagr": None,
+        "net_profit_margin_avg": None,
+        "roce": None
+    }
 
 def main():
     if not os.path.exists(QUALIFIED_PATH):
@@ -98,6 +114,14 @@ def main():
             logging.info(f"Processed {idx+1}/{len(all_tickers)} tickers")
 
     metrics_df = pd.DataFrame(records)
+    # Debug print if missing columns
+    expected_cols = ["ticker", "industry", "market_cap", "revenue_cagr", "net_profit_margin_avg", "roce"]
+    missing = [col for col in expected_cols if col not in metrics_df.columns]
+    if missing:
+        logging.error(f"metrics_df missing columns: {missing}")
+    if metrics_df.empty:
+        logging.error("metrics_df is empty! No valid metrics extracted.")
+
     # Ensure robust types for downstream filtering
     metrics_df = metrics_df.astype({
         "ticker": str,
