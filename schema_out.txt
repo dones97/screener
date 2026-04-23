@@ -1,0 +1,156 @@
+Table: companies
+Schema: CREATE TABLE companies (
+                ticker TEXT PRIMARY KEY,
+                company_name TEXT,
+                sector TEXT,
+                industry TEXT,
+                last_updated TIMESTAMP,
+                data_available BOOLEAN
+            )
+Columns: ['ticker', 'company_name', 'sector', 'industry', 'last_updated', 'data_available']
+Sample Data:
+('20MICRONS', None, None, None, '2025-11-26T17:07:17.759773', 1)
+('21STCENMGM', None, None, None, '2025-11-26T17:07:20.322846', 1)
+('360ONE', None, None, None, '2025-11-26T17:07:22.921687', 1)
+
+Table: quarterly_results
+Schema: CREATE TABLE quarterly_results (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                ticker TEXT,
+                quarter_date TEXT,
+                sales REAL,
+                expenses REAL,
+                operating_profit REAL,
+                opm_percent REAL,
+                other_income REAL,
+                interest REAL,
+                depreciation REAL,
+                profit_before_tax REAL,
+                tax_percent REAL,
+                net_profit REAL,
+                eps REAL,
+                scraped_at TIMESTAMP,
+                UNIQUE(ticker, quarter_date)
+            )
+Columns: ['id', 'ticker', 'quarter_date', 'sales', 'expenses', 'operating_profit', 'opm_percent', 'other_income', 'interest', 'depreciation', 'profit_before_tax', 'tax_percent', 'net_profit', 'eps', 'scraped_at']
+Sample Data:
+(1, '20MICRONS', 'Sep 2022', None, None, 18.0, 12.0, None, 4.0, 3.0, 13.0, 26.0, None, 2.79, '2025-11-26T17:07:17.759773')
+(2, '20MICRONS', 'Dec 2022', None, None, 13.0, 10.0, None, 3.0, 3.0, 9.0, 29.0, None, 1.76, '2025-11-26T17:07:17.759773')
+(3, '20MICRONS', 'Mar 2023', None, None, 17.0, 11.0, None, 4.0, 3.0, 12.0, 22.0, None, 2.61, '2025-11-26T17:07:17.759773')
+
+Table: sqlite_sequence
+Schema: CREATE TABLE sqlite_sequence(name,seq)
+Columns: ['name', 'seq']
+Sample Data:
+('quarterly_results', 26505)
+('annual_profit_loss', 25254)
+('balance_sheet', 25211)
+
+Table: annual_profit_loss
+Schema: CREATE TABLE annual_profit_loss (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                ticker TEXT,
+                year TEXT,
+                sales REAL,
+                expenses REAL,
+                operating_profit REAL,
+                opm_percent REAL,
+                other_income REAL,
+                interest REAL,
+                depreciation REAL,
+                profit_before_tax REAL,
+                tax_percent REAL,
+                net_profit REAL,
+                eps REAL,
+                dividend_payout_percent REAL,
+                scraped_at TIMESTAMP,
+                UNIQUE(ticker, year)
+            )
+Columns: ['id', 'ticker', 'year', 'sales', 'expenses', 'operating_profit', 'opm_percent', 'other_income', 'interest', 'depreciation', 'profit_before_tax', 'tax_percent', 'net_profit', 'eps', 'dividend_payout_percent', 'scraped_at']
+Sample Data:
+(1, '20MICRONS', 'Mar 2014', None, None, 23.0, 8.0, None, 22.0, 10.0, 0.0, -62.0, None, 0.04, 0.0, '2025-11-26T17:07:17.759773')
+(2, '20MICRONS', 'Mar 2015', None, None, 23.0, 7.0, None, 25.0, 9.0, -5.0, -12.0, None, -1.2, 0.0, '2025-11-26T17:07:17.759773')
+(3, '20MICRONS', 'Mar 2016', None, None, 41.0, 12.0, None, 24.0, 9.0, 12.0, 23.0, None, 2.65, 0.0, '2025-11-26T17:07:17.759773')
+
+Table: balance_sheet
+Schema: CREATE TABLE balance_sheet (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                ticker TEXT,
+                year TEXT,
+                equity_capital REAL,
+                reserves REAL,
+                borrowings REAL,
+                other_liabilities REAL,
+                total_liabilities REAL,
+                fixed_assets REAL,
+                cwip REAL,
+                investments REAL,
+                other_assets REAL,
+                total_assets REAL,
+                scraped_at TIMESTAMP,
+                UNIQUE(ticker, year)
+            )
+Columns: ['id', 'ticker', 'year', 'equity_capital', 'reserves', 'borrowings', 'other_liabilities', 'total_liabilities', 'fixed_assets', 'cwip', 'investments', 'other_assets', 'total_assets', 'scraped_at']
+Sample Data:
+(1, '20MICRONS', 'Mar 2014', 17.0, 58.0, None, None, 307.0, None, 11.0, 7.0, None, 307.0, '2025-11-26T17:07:17.759773')
+(2, '20MICRONS', 'Mar 2015', 17.0, 53.0, None, None, 312.0, None, 7.0, 7.0, None, 312.0, '2025-11-26T17:07:17.759773')
+(3, '20MICRONS', 'Mar 2016', 18.0, 66.0, None, None, 315.0, None, 2.0, 7.0, None, 315.0, '2025-11-26T17:07:17.759773')
+
+Table: cash_flow
+Schema: CREATE TABLE cash_flow (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                ticker TEXT,
+                year TEXT,
+                cash_from_operating_activity REAL,
+                cash_from_investing_activity REAL,
+                cash_from_financing_activity REAL,
+                net_cash_flow REAL,
+                scraped_at TIMESTAMP,
+                UNIQUE(ticker, year)
+            )
+Columns: ['id', 'ticker', 'year', 'cash_from_operating_activity', 'cash_from_investing_activity', 'cash_from_financing_activity', 'net_cash_flow', 'scraped_at']
+Sample Data:
+(1, '20MICRONS', 'Mar 2014', None, None, None, 1.0, '2025-11-26T17:07:17.759773')
+(2, '20MICRONS', 'Mar 2015', None, None, None, 7.0, '2025-11-26T17:07:17.759773')
+(3, '20MICRONS', 'Mar 2016', None, None, None, -5.0, '2025-11-26T17:07:17.759773')
+
+Table: annual_ratios
+Schema: CREATE TABLE annual_ratios (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                ticker TEXT,
+                year TEXT,
+                debtor_days REAL,
+                inventory_days REAL,
+                days_payable REAL,
+                cash_conversion_cycle REAL,
+                working_capital_days REAL,
+                roce_percent REAL,
+                scraped_at TIMESTAMP,
+                UNIQUE(ticker, year)
+            )
+Columns: ['id', 'ticker', 'year', 'debtor_days', 'inventory_days', 'days_payable', 'cash_conversion_cycle', 'working_capital_days', 'roce_percent', 'scraped_at']
+Sample Data:
+(1, '20MICRONS', 'Mar 2014', 67.0, 148.0, 120.0, 94.0, -55.0, 10.0, '2025-11-26T17:07:17.759773')
+(2, '20MICRONS', 'Mar 2015', 50.0, 146.0, 154.0, 42.0, -30.0, 9.0, '2025-11-26T17:07:17.759773')
+(3, '20MICRONS', 'Mar 2016', 60.0, 148.0, 120.0, 88.0, -5.0, 15.0, '2025-11-26T17:07:17.759773')
+
+Table: key_metrics
+Schema: CREATE TABLE key_metrics (
+                ticker TEXT PRIMARY KEY,
+                market_cap REAL,
+                current_price REAL,
+                high_low TEXT,
+                stock_pe REAL,
+                book_value REAL,
+                dividend_yield REAL,
+                roce_percent REAL,
+                roe_percent REAL,
+                face_value REAL,
+                scraped_at TIMESTAMP
+            )
+Columns: ['ticker', 'market_cap', 'current_price', 'high_low', 'stock_pe', 'book_value', 'dividend_yield', 'roce_percent', 'roe_percent', 'face_value', 'scraped_at']
+Sample Data:
+('20MICRONS', None, None, None, None, None, None, None, None, None, '2025-11-26T17:07:17.759773')
+('21STCENMGM', None, None, None, None, None, None, None, None, None, '2025-11-26T17:07:20.322846')
+('360ONE', None, None, None, None, None, None, None, None, None, '2025-11-26T17:07:22.921687')
+
