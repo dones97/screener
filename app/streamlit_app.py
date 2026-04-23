@@ -226,9 +226,9 @@ display_df = display_df.rename(
 )
 
 # Format numerical columns
-display_df['MCap'] = display_df['MCap'].map('{:,.0f}'.format) + " Cr"
-display_df['Rev CAGR'] = (display_df['Rev CAGR'] * 100).map('{:.1f}%'.format)
-display_df['NPM Avg'] = (display_df['NPM Avg'] * 100).map('{:.1f}%'.format)
+display_df['MCap'] = display_df['MCap'].apply(lambda x: f"{x:,.0f} Cr" if pd.notna(x) else "N/A")
+display_df['Rev CAGR'] = (display_df['Rev CAGR'] * 100).apply(lambda x: f"{x:.1f}%" if pd.notna(x) else "N/A")
+display_df['NPM Avg'] = (display_df['NPM Avg'] * 100).apply(lambda x: f"{x:.1f}%" if pd.notna(x) else "N/A")
 
 show_cols = ["Ticker", "Name", "Sector", "Industry", "Ind Count", "Rev CAGR", "NPM Avg", "MCap"]
 for col in show_cols:
