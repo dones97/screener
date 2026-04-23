@@ -155,10 +155,11 @@ else:
 
 st.sidebar.markdown("---")
 # Market Cap slider
-CRORE = 1e7
-mc_min = 100 * CRORE
+# The screener_data.db stores market cap directly in Crores
+mc_min = 100.0  # 100 Crores
 max_mc = df['market_cap'].max()
-mc_max = float(max_mc) if pd.notna(max_mc) else mc_min * 10
+mc_max = float(max_mc) if pd.notna(max_mc) and max_mc > mc_min else 2000000.0  # Default to 20 Lakh Crores if missing
+
 steps = []
 cur = mc_min
 while cur < mc_max:
@@ -169,7 +170,7 @@ if not steps or steps[-1] < mc_max:
 steps = sorted(list(set([int(x) for x in steps])))
 
 def display_cr(val):
-    return f"{val/1e7:,.0f} Cr"
+    return f"{val:,.0f} Cr"
 
 mc_range = st.sidebar.select_slider(
     "Market Cap Range (Cr)",
@@ -180,9 +181,10 @@ mc_range = st.sidebar.select_slider(
 )
 
 # Apply market cap filter
+# We also include companies with missing market cap to not filter them out arbitrarily if data is missing
 filtered = filtered[
-    (filtered['market_cap'] >= mc_range[0]) &
-    (filtered['market_cap'] <= mc_range[1])
+    (filtered['market_cap'].isna()) | 
+    ((filtered['market_cap'] >= mc_range[0]) & (filtered['market_cap'] <= mc_range[1]))
 ].copy()
 
 # Apply percentile filters per industry
@@ -224,7 +226,7 @@ display_df = display_df.rename(
 )
 
 # Format numerical columns
-display_df['MCap'] = (display_df['MCap'] / 1e7).map('{:,.0f}'.format) + " Cr"
+display_df['MCap'] = display_df['MCap'].map('{:,.0f}'.format) + " Cr"
 display_df['Rev CAGR'] = (display_df['Rev CAGR'] * 100).map('{:.1f}%'.format)
 display_df['NPM Avg'] = (display_df['NPM Avg'] * 100).map('{:.1f}%'.format)
 
