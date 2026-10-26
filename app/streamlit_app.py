@@ -40,13 +40,24 @@ def download_and_load_db():
     df_info = pd.read_sql(query_info, conn)
     
     query_financials = """
-    SELECT ticker, year, sales, net_profit 
+    SELECT ticker, year, sales, net_profit,
+           expenses, other_income, interest, depreciation, profit_before_tax
     FROM annual_profit_loss
-    WHERE sales IS NOT NULL AND net_profit IS NOT NULL
+    WHERE net_profit IS NOT NULL
     """
     df_fin = pd.read_sql(query_financials, conn)
     conn.close()
-    
+
+    # Banks/NBFCs have no "Sales" row on Screener (their top line is "Revenue"), so sales is NULL for them.
+    # Rebuild it from the P&L identity: Revenue = PBT - Other Income + Depreciation + Interest + Expenses
+    # (matches reported sales within 1% for ~97% of non-financial company-years).
+    derived_sales = (
+        df_fin['profit_before_tax'] - df_fin['other_income'] + df_fin['depreciation']
+        + df_fin['interest'] + df_fin['expenses']
+    )
+    df_fin['sales'] = df_fin['sales'].fillna(derived_sales)
+    df_fin = df_fin.dropna(subset=['sales'])[['ticker', 'year', 'sales', 'net_profit']]
+
     if len(df_fin) > 0:
         df_fin['year_dt'] = pd.to_datetime(df_fin['year'], format='%b %Y', errors='coerce')
         df_fin = df_fin.dropna(subset=['year_dt']).sort_values(['ticker', 'year_dt'])
@@ -57,22 +68,28 @@ def download_and_load_db():
                 return pd.Series({'cagr_3yr': np.nan, 'cagr_5yr': np.nan, 'npm_avg_3yr': np.nan, 'npm_avg_5yr': np.nan})
                 
             latest_sales = group.iloc[-1]['sales']
-            
+
+            # CAGR needs positive start and end sales. NPM is aggregate profit / aggregate sales over the
+            # window, and only defined when every year has positive sales (zero/negative sales give inf/garbage).
+            def cagr(first_sales, years):
+                return (latest_sales / first_sales)**(1/years) - 1 if first_sales > 0 and latest_sales > 0 else np.nan
+
+            def npm(window):
+                return window['net_profit'].sum() / window['sales'].sum() if (window['sales'] > 0).all() else np.nan
+
             # 5 year
             if len(group) == 5:
-                first_sales_5yr = group.iloc[0]['sales']
-                cagr_5yr = (latest_sales / first_sales_5yr)**(1/4) - 1 if first_sales_5yr > 0 else np.nan
-                npm_avg_5yr = (group['net_profit'] / group['sales']).mean()
+                cagr_5yr = cagr(group.iloc[0]['sales'], 4)
+                npm_avg_5yr = npm(group)
             else:
                 cagr_5yr = np.nan
                 npm_avg_5yr = np.nan
-                
+
             # 3 year
             group_3yr = group.tail(3)
             if len(group_3yr) == 3:
-                first_sales_3yr = group_3yr.iloc[0]['sales']
-                cagr_3yr = (latest_sales / first_sales_3yr)**(1/2) - 1 if first_sales_3yr > 0 else np.nan
-                npm_avg_3yr = (group_3yr['net_profit'] / group_3yr['sales']).mean()
+                cagr_3yr = cagr(group_3yr.iloc[0]['sales'], 2)
+                npm_avg_3yr = npm(group_3yr)
             else:
                 cagr_3yr = np.nan
                 npm_avg_3yr = np.nan
@@ -143,13 +160,17 @@ use_rev_cagr = st.sidebar.checkbox(f"Filter by Revenue CAGR ({timeframe})", valu
 use_npm = st.sidebar.checkbox(f"Filter by Net Profit Margin Avg ({timeframe})", value=False)
 
 percentile_options = [1, 5, 10, 20, 25, 50]
+peer_help = (
+    "Compared against peers: companies in the SAME industry that also fall within the selected "
+    "sector(s) and market cap range. 'Peers' in the results shows the size of this group."
+)
 if use_rev_cagr:
-    rev_cagr_p = st.sidebar.selectbox("Revenue CAGR percentile (top %)", percentile_options, index=1, help="Compared against other companies in the SAME industry.")
+    rev_cagr_p = st.sidebar.selectbox("Revenue CAGR percentile (top %)", percentile_options, index=1, help=peer_help)
 else:
     rev_cagr_p = None
 
 if use_npm:
-    npm_p = st.sidebar.selectbox("Net Profit Margin percentile (top %)", percentile_options, index=1, help="Compared against other companies in the SAME industry.")
+    npm_p = st.sidebar.selectbox("Net Profit Margin percentile (top %)", percentile_options, index=1, help=peer_help)
 else:
     npm_p = None
 
@@ -193,22 +214,26 @@ def get_industry_cutoff(data, metric_col, pct):
         lambda x: np.percentile(x.dropna(), 100 - pct) if not x.dropna().empty else -np.inf
     ).to_dict()
 
-cutoffs_cagr = {}
-cutoffs_npm = {}
+# Peer group = companies left after the sector/industry/market cap filters. Both percentile cutoffs
+# are computed on this same group and then combined, so one filter does not shrink the other's peers.
+peer_counts = filtered['industry'].value_counts().to_dict()
+passes = pd.Series(True, index=filtered.index)
 
 if use_rev_cagr:
     cutoffs_cagr = get_industry_cutoff(filtered, cagr_col, rev_cagr_p)
-    filtered['cagr_cutoff'] = filtered['industry'].map(cutoffs_cagr)
-    filtered = filtered[filtered[cagr_col] >= filtered['cagr_cutoff']]
+    passes &= filtered[cagr_col] >= filtered['industry'].map(cutoffs_cagr)
 
 if use_npm:
     cutoffs_npm = get_industry_cutoff(filtered, npm_col, npm_p)
-    filtered['npm_cutoff'] = filtered['industry'].map(cutoffs_npm)
-    filtered = filtered[filtered[npm_col] >= filtered['npm_cutoff']]
+    passes &= filtered[npm_col] >= filtered['industry'].map(cutoffs_npm)
 
-# Compute industry counts
-industry_counts = df['industry'].value_counts().to_dict()
-filtered['industry_count'] = filtered['industry'].map(industry_counts)
+filtered = filtered[passes].copy()
+filtered['industry_count'] = filtered['industry'].map(peer_counts).astype('Int64')
+
+# Sort numerically before the columns are formatted as strings
+filtered = filtered.sort_values(
+    by=[cagr_col, npm_col, 'industry_count'], ascending=[False, False, False], na_position='last'
+)
 
 # Rename columns for display
 display_df = filtered.copy()
@@ -218,7 +243,7 @@ display_df = display_df.rename(
         'company_name': 'Name',
         'sector': 'Sector',
         'industry': 'Industry',
-        'industry_count': 'Ind Count',
+        'industry_count': 'Peers',
         cagr_col: 'Rev CAGR',
         npm_col: 'NPM Avg',
         'market_cap': 'MCap'
@@ -230,7 +255,7 @@ display_df['MCap'] = display_df['MCap'].apply(lambda x: f"{x:,.0f} Cr" if pd.not
 display_df['Rev CAGR'] = (display_df['Rev CAGR'] * 100).apply(lambda x: f"{x:.1f}%" if pd.notna(x) else "N/A")
 display_df['NPM Avg'] = (display_df['NPM Avg'] * 100).apply(lambda x: f"{x:.1f}%" if pd.notna(x) else "N/A")
 
-show_cols = ["Ticker", "Name", "Sector", "Industry", "Ind Count", "Rev CAGR", "NPM Avg", "MCap"]
+show_cols = ["Ticker", "Name", "Sector", "Industry", "Peers", "Rev CAGR", "NPM Avg", "MCap"]
 for col in show_cols:
     if col not in display_df.columns:
         display_df[col] = np.nan
@@ -252,9 +277,7 @@ st.write(
 st.write(f"**{len(display_df)} stocks found**")
 
 st.dataframe(
-    display_df[show_cols]
-    .sort_values(by=["Rev CAGR", "NPM Avg", "Ind Count"], ascending=[False, False, False])
-    .reset_index(drop=True),
+    display_df[show_cols].reset_index(drop=True),
     hide_index=True,
     use_container_width=True,
     column_order=show_cols,
@@ -267,7 +290,7 @@ csv_export_df = filtered.rename(
         'company_name': 'Name',
         'sector': 'Sector',
         'industry': 'Industry',
-        'industry_count': 'Ind Count',
+        'industry_count': 'Peers',
         cagr_col: 'Rev CAGR',
         npm_col: 'NPM Avg',
         'market_cap': 'MCap'
